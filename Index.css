@@ -10,5 +10,15 @@
     position: fixed;
     top: 0%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #3fdb315e
-  }
+}
+h1{
+    margin-left: 15px;
+    padding:.5rem;
+	text-transform:uppercase;
+    border: 1px solid black;
+    border-radius: 5px; 
+    background-color: rgba(255, 255, 255, 0.842);
+}
