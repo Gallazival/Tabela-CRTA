@@ -10,6 +10,45 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
+.nao-metal{
+	background-color: rgba(202, 255, 58, 0.6);
+}
+	
+.gas-nobre{
+	background-color: rgba(104, 185, 233, 0.6);
+}
+
+.metal-alcalino{
+	background-color: rgba(250, 183, 37, 0.6);
+}
+	
+.metal-alcalino-terroso{
+	background-color: rgba(255, 241, 46, 0.6);
+}
+	
+.semimetal{
+	background-color: rgba(53, 228, 207, 0.6);
+}
+	
+.halogenio{
+	background-color: rgba(171, 192, 204, 0.6);
+}
+	
+.outros-metais{
+	background-color: rgba(157, 48, 207, 0.6);
+}
+	
+.metal-transicao{
+	background-color: rgba(231, 53, 53, 0.6);
+}
+	
+.lantanideo{
+	background-color: rgba(160, 115, 233, 0.6);
+}
+	
+.actinidio{
+	background-color: rgba(255, 75, 210, 0.6);
+}
 .header {
     padding: 10px 0px 10px 10px;
     width: 100%;
@@ -59,9 +98,10 @@ section{
 	justify-content:center;
 }
 span{
-	font-size:.65em;
+	font-size:.7.3em;
 	position:absolute;
-	top:5px;
+	top: 2px;
+    left: 2px;
 }
 h1{
     padding:.5rem;
