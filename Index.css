@@ -4,11 +4,8 @@
 	list-style:none;
 	box-sizing:border-box;	
 }
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+body{
+width: 100%;
 }
 .nao-metal{
 	background-color: rgb(202, 255, 58);
@@ -52,7 +49,6 @@ body {
 .header {
     padding: 10px 0px 10px 10px;
     width: 100%;
-    position: fixed;
     top: 0%;
     display: flex;
     justify-content: space-between;
@@ -63,14 +59,17 @@ body {
     background-color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     font: 0.9em 'Montserrat', sans-serif;
-    margin-top: 6em;
+    margin-top: 4rem;
+    width: 100%;
 }
 #tabela{
     display:grid;
-    grid-template-columns:repeat(18, 5.5rem);
-    grid-gap:.25em;
+    grid-template-columns:repeat(18, 4rem);
+    grid-gap:.2rem;
 }
 .col-span16{
     grid-column:span 16;
@@ -88,17 +87,16 @@ body {
     visibility:hidden;
 }
 section{
-	height:5.5em;
 	border:1.5px solid;
-	border-radius: 5px;	
-    width: auto;
+	border-radius: 5px;
+    height: 4rem;	
 	position:relative;
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
 }
 span{
-	font-size:.7.3em;
+	font-size:.6rem;
 	position:absolute;
 	top: 2px;
     left: 2px;
@@ -111,14 +109,14 @@ h1{
     background-color: rgba(255, 255, 255, 0.842);
 }
 h2{
-	font-size:1.3em;
+	font-size:1rem;
     display: flex;
     align-self: center;
 }
 p{
     display: flex;
     align-self: center;
-	font-size:1em;	
+	font-size:.6rem;	
 }
 section:hover{
     transition:.2s;
