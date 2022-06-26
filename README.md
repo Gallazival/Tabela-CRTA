@@ -5,5 +5,5 @@
 * Criar descrição em foco do elemento
 * Interações de cliques, teclado e etc
 * Adicionar legenda das cores
-* Adicionar licensa do repositório (GPL-3.0)
+* Adicionar licença do repositório (GPL-3.0)
 * Configurar GitHub Pages
