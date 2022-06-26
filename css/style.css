@@ -6,6 +6,7 @@
 }
 body{
 width: 100%;
+    -webkit-backface-visibility: hidden;
 }
 .nao-metal{
 	background-color: rgb(202, 255, 58);
@@ -119,7 +120,7 @@ p{
     align-self: center;
 	font-size:.6rem;	
 }
-section:hover{
+section:hover, section:focus {
     transition:.2s;
     transform:scale(1.3);
     cursor:pointer;
