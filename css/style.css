@@ -1,5 +1,6 @@
 body {
-  min-width: 100%;
+  width: 100%;
+  /* min-width: 100%; */
   -webkit-backface-visibility: hidden;
 }
 
@@ -51,7 +52,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #3fdb315e;
-  position: sticky;
+  /* position: sticky; */
 }
 
 .box {
