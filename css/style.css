@@ -38,15 +38,15 @@
   background: rgb(255, 75, 210);
 }
 
-.familia {
+.familia, .periodo {
   background: rgb(255, 255, 255);
 }
 
-* {
+/* * {
   -webkit-font-smoothing: antialiased;
   perspective: 1000;
-  /* backface-visibility: hidden; */
-}
+  backface-visibility: hidden;
+} */
 
 body {
   display: grid;
@@ -78,9 +78,29 @@ h1 {
 main {
   place-self: center;
   display: grid;
-  gap: 0.2rem;
-  grid-template-columns: repeat(18, 4rem);
+  gap: 0.75rem;
+  grid-template-columns: auto auto;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+main > div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.tabela-wrapper {
+  grid-template-columns: repeat(18, 4rem);
+  grid-template-rows: repeat(9, 4rem);
+}
+
+.periodos-wrapper {
+  grid-template-columns: 2rem;
+  grid-template-rows: repeat(8, 4rem);
+}
+
+.familias-wrapper {
+  grid-template-columns: repeat(18, 4rem);
+  grid-template-rows: 2rem;
 }
 
 .grid-col-span-3 {
@@ -100,7 +120,6 @@ main {
 }
 
 section {
-  height: 4rem;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   position: relative;
@@ -118,17 +137,17 @@ section:focus {
   z-index: 1;
 }
 
-h6 {
-  font-size: 0.6rem;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-}
-
 h4 {
   font-weight: 700;
 }
 
 h5 {
   font-size: 0.6rem;
+}
+
+h6 {
+  font-size: 0.6rem;
+  position: absolute;
+  top: 2px;
+  left: 2px;
 }
