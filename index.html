@@ -10,10 +10,17 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-  <script defer src="js/script.js"></script>
+  <script defer src="js/script.js" type="module"></script>
 </head>
 
 <body>
+  <div class="focus-wall" tabindex="0" autofocus>
+    <div class="pop-up">
+      <p>AAAAAAAAAAAAA</p>
+      <button onclick="document.querySelector('.focus-wall').style.display = 'none'">Fechar</button>
+    </div>
+  </div>
+
   <header>
     <img src="img/cta.png" alt="logo CTA" width="220px">
     <div class="heading-box">
@@ -877,7 +884,7 @@
       </section>
     </div>
 
-    <div class="periodos-wrapper">
+    <!-- <div class="periodos-wrapper">
       <section class="periodo" tabindex="0" id="p1">
         <h4>1</h4>
       </section>
@@ -899,7 +906,7 @@
       <section class="periodo" tabindex="0" id="p7">
         <h4>7</h4>
       </section>
-    </div>
+    </div> -->
 
     <div class="familias-wrapper">
       <!-- <h4>Famílias:<br></h4> -->
