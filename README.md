@@ -2,5 +2,6 @@
 ## TO-DO
 
 * Criar descrição em foco do elemento
-* Interações de cliques, teclado e etc
-* Adicionar legenda das cores
+* Polir o movimento
+* Link dos lantanidios/actinidios para os elementos
+* Botão ajuda
