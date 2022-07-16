@@ -1,6 +1,21 @@
 import { elementos } from './elementos.js';
 
-// const makeEmptyArray = (size, content) => new Array(size).fill(content);
+const emptyArray = (size, content) => new Array(size).fill('');
+const numberArray = (start, end) => [...Array(end - start + 1).keys()].map(num => num + start);
+
+const tabela = [
+  [...emptyArray(18)],
+  [1, ...emptyArray(16), 2],
+  [3, 4, ...emptyArray(10), ...numberArray(5, 10)],
+  [11, 12, ...emptyArray(10), ...numberArray(13, 18)],
+  [...numberArray(19, 36)],
+  [...numberArray(37, 54)],
+  [55, 56, '57-71', ...numberArray(72, 86)],
+  [87, 88, '89-103', ...numberArray(104, 118)],
+  [...emptyArray(3), ...numberArray(57, 71)],
+  [...emptyArray(3), ...numberArray(89, 103)],
+  [...emptyArray(18)],
+];
 
 const elements = document.getElementsByClassName('elemento');
 let lastFocus = document.querySelector('[data-id="1"]');
@@ -40,6 +55,48 @@ document.addEventListener('keydown', evt => {
       if (document.activeElement === popUp.lastElementChild) {
         evt.preventDefault();
         popUp.firstElementChild.focus();
+      }
+    }
+  }
+});
+
+document.querySelector('#fechar').addEventListener('focusout', () => {
+  if (document.querySelector('.focus-wall').style.visibility === 'hidden') {
+    lastFocus.focus();
+  }
+});
+
+document.addEventListener('keydown', evt => {
+  const activeElement = document.activeElement;
+  for (let periodo in tabela) {
+    for (let familia in tabela[periodo]) {
+      if (tabela[periodo][familia].toString() === activeElement.dataset.id) {
+        if (evt.altKey) {
+          if (evt.key === 'ArrowUp' || evt.code === 'ArrowUp') {
+            let nextElement = tabela[parseInt(periodo) - 1][parseInt(familia)];
+            if (nextElement === '') {
+              break;
+            }
+            evt.preventDefault();
+            document.querySelector(`[data-id='${nextElement}']`).focus();
+          }
+          if (evt.key === 'ArrowDown' || evt.code === 'ArrowDown') {
+            let nextElement = tabela[parseInt(periodo) + 1][parseInt(familia)];
+            if (nextElement === '') {
+              break;
+            }
+            evt.preventDefault();
+            document.querySelector(`[data-id='${nextElement}']`).focus();
+          }
+          if (evt.key === 'ArrowRight' || evt.code === 'ArrowRight') {
+            evt.preventDefault();
+            activeElement.nextElementSibling.focus();
+          }
+          if (evt.key === 'ArrowLeft' || evt.code === 'ArrowLeft') {
+            evt.preventDefault();
+            activeElement.previousElementSibling.focus();
+          }
+        }
       }
     }
   }
