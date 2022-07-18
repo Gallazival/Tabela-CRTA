@@ -73,28 +73,44 @@ document.addEventListener('keydown', evt => {
       if (tabela[periodo][familia].toString() === activeElement.dataset.id) {
         if (evt.altKey) {
           if (evt.key === 'ArrowUp' || evt.code === 'ArrowUp') {
-            let nextElement = tabela[parseInt(periodo) - 1][parseInt(familia)];
-            if (nextElement === '') {
+            let upperElement = tabela[parseInt(periodo) - 1][parseInt(familia)];
+            if (upperElement === '') {
               break;
             }
-            evt.preventDefault();
-            document.querySelector(`[data-id='${nextElement}']`).focus();
+            else {
+              evt.preventDefault();
+              document.querySelector(`[data-id='${upperElement}']`).focus();
+            }
           }
           if (evt.key === 'ArrowDown' || evt.code === 'ArrowDown') {
-            let nextElement = tabela[parseInt(periodo) + 1][parseInt(familia)];
-            if (nextElement === '') {
+            let lowerElement = tabela[parseInt(periodo) + 1][parseInt(familia)];
+            if (lowerElement === '') {
               break;
             }
-            evt.preventDefault();
-            document.querySelector(`[data-id='${nextElement}']`).focus();
+            else {
+              evt.preventDefault();
+              document.querySelector(`[data-id='${lowerElement}']`).focus();
+            }
           }
           if (evt.key === 'ArrowRight' || evt.code === 'ArrowRight') {
+            let nextElement = activeElement.nextElementSibling;
             evt.preventDefault();
-            activeElement.nextElementSibling.focus();
+            if (nextElement.classList.contains('hidden')) {
+              nextElement.nextElementSibling.focus();
+            }
+            else {
+              nextElement.focus();
+            }
           }
           if (evt.key === 'ArrowLeft' || evt.code === 'ArrowLeft') {
+            let previousElement = activeElement.previousElementSibling;
             evt.preventDefault();
-            activeElement.previousElementSibling.focus();
+            if (previousElement.classList.contains('hidden')) {
+              previousElement.previousElementSibling.focus();
+            }
+            else {
+              previousElement.focus();
+            }
           }
         }
       }
