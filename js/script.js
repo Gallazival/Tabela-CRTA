@@ -22,11 +22,11 @@ let lastFocus = document.querySelector('[data-id="1"]');
 
 for (let elemento of elements) {
   elemento.addEventListener('click', () => {
-    detalharElemento(elemento.dataset.id);
+    detalharElemento(elemento);
   });
   elemento.addEventListener('keydown', evt => {
     if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
-      detalharElemento(elemento.dataset.id);
+      detalharElemento(elemento);
     }
   });
   elemento.addEventListener('focusout', () => {
@@ -34,21 +34,37 @@ for (let elemento of elements) {
   });
 }
 
-function detalharElemento(index) {
-  let popElement = document.querySelector('[data-id="'+index+'"]');
+function detalharElemento(elemento) {
+  if (elemento === 'ajuda') {
+    document.querySelector('.pop-up-text').innerHTML = `
+      <h2><b>Controles:</b></h2>
+      <ul>
+        <li>Use a tecla Alt + setas do teclado para navegar entre os elementos da tabela</li>
+        <li>Use a tecla Enter para acessar os elementos em geral</li>
+        <li>Os atalhos Tab e Shift+Tab também funcionam</li>
+        <li>Se precisar revisar esta informação, aperte Alt+h</li>
+      </ul>
+    `;
+  }
+  else {
+    let index = elemento.dataset.id;
+    document.querySelector('.pop-up-text').innerHTML = `
+      ${elemento.outerHTML}
+      <p><b>Nome:</b> ${elementos[index].nome}</p>
+      <p><b>Sigla:</b> ${elementos[index].sigla}</p>
+      <p><b>Número atômico:</b> ${elementos[index].atomico}</p>
+      <p><b>Massa atômica:</b> ${elementos[index].massa} g/mol</p>
+      <p><b>Classificação:</b> ${elementos[index].class}</p>
+      <p><b>Estado:</b> ${elementos[index].estado}</p>
+      <p><b>Ponto de fusão:</b> ${elementos[index].fusao}</p>
+      <p><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}</p>
+      <p><b>Distribuição:</b> ${elementos[index].distribuicao}</p>
+      <p><b>Nox:</b> ${elementos[index].nox}</p>
+      <p><b>Curiosidade:</b> ${elementos[index].curiosidade}</p>
+    `;
+  }
   document.querySelector('.focus-wall').style.visibility = 'visible';
   document.querySelector('.pop-up-text').focus();
-  document.querySelector('.pop-up-text').innerHTML = `
-    <section class="${[...popElement.classList].join(' ')}">${popElement.innerHTML}</section>
-    <p><b>Estado:</b> ${elementos[index].estado}</p>
-    <p><b>Temperatura de fusão:</b> ${elementos[index].fusao}</p>
-    <p><b>Temperatura de ebulição:</b> ${elementos[index].ebulicao}</p>
-    <p><b>Classificação:</b> ${elementos[index].class}</p>
-    <p><b>Nox:</b> ${elementos[index].nox}</p>
-    <p><b>Distribuição:</b> ${elementos[index].distribuicao}</p>
-    <p><b>Valência:</b> ${elementos[index].valencia}</p>
-    <p><b>Curiosidade:</b> ${elementos[index].curiosidade}</p>
-  `;
 }
 
 document.addEventListener('keydown', evt => {
@@ -64,6 +80,11 @@ document.addEventListener('keydown', evt => {
         evt.preventDefault();
         popUp.firstElementChild.focus();
       }
+    }
+  }
+  if (evt.key === 'h' || evt.kay === 'H' || evt.code === 'KeyH') {
+    if (evt.altKey) {
+      detalharElemento('ajuda');
     }
   }
 });
