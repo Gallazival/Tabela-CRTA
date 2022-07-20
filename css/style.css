@@ -42,7 +42,7 @@
   background: rgb(255, 255, 255);
 }
 
-/* * {
+/* {
   -webkit-font-smoothing: antialiased;
   perspective: 1000;
   backface-visibility: hidden;
@@ -51,6 +51,10 @@
 body {
   display: grid;
   gap: 3rem;
+}
+
+b {
+  font-weight: 600;
 }
 
 .focus-wall {
@@ -64,33 +68,66 @@ body {
 
 .pop-up {
   padding: 2rem;
+  display: flex;
   place-self: center;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
-  display: grid;
+  flex-direction:column;
   place-items: center;
-  /* gap: 3rem; */
-  grid-template-rows: 2fr 1fr;
   width: 35rem;
-  height: 25rem;
-  background: rgb(238, 233, 233);
+  background: rgb(135, 209, 129);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .pop-up button {
   outline: 1px solid rgb(0, 0, 0);
-  background-color: red;
+  background-color: rgb(238, 233, 233);
   padding: 0.5rem;
-  /* height: fit-content;
-  width: fit-content;
-  text-align: center;
-  font-size: 0.9rem; */
   border-radius: 5px;
-  font-weight: 700;
+  transition: transform 0.25s;
+}
+
+.pop-up-text{
+  outline: 1px solid rgb(0, 0, 0);
+  background-color: rgb(238, 233, 233);
+  border-radius: 5px;
+  display: flex;
+  flex-direction:column;
+  margin: 1rem;
+  text-align: justify;
+  padding: 1rem;
+}
+
+.pop-up-text p{
+  padding: 5px;
+}
+
+.pop-up-text section {
+  transition: none;
+  width: 4rem;
+  height: 4rem;
+  align-self: center;
+}
+
+.pop-up-text h2{
+  padding: 5px;
+  align-self: center;
+  font-size: 1rem;
+}
+
+.pop-up-text li{
+  padding: 5px;
+}
+.pop-up-text section:hover {
+  transform: none;
+  cursor: unset;
 }
 
 .pop-up button:hover,
-.pop-up button:focus {
-  outline: 2px solid rgb(0, 0, 0);
+.pop-up button:focus{
+  cursor: pointer;
+  transform: scale(1.2);
+  z-index: 1;
 }
 
 header {
