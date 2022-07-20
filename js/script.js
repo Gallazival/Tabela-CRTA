@@ -35,11 +35,19 @@ for (let elemento of elements) {
 }
 
 function detalharElemento(index) {
+  let popElement = document.querySelector('[data-id="'+index+'"]');
   document.querySelector('.focus-wall').style.visibility = 'visible';
   document.querySelector('.pop-up-text').focus();
   document.querySelector('.pop-up-text').innerHTML = `
-    <h2>Elemento: ${elementos[index].nome}</h2>
-    <p>Curiosidade: ${elementos[index].curiosidade}</p>
+    <section class="${[...popElement.classList].join(' ')}">${popElement.innerHTML}</section>
+    <p><b>Estado:</b> ${elementos[index].estado}</p>
+    <p><b>Temperatura de fusão:</b> ${elementos[index].fusao}</p>
+    <p><b>Temperatura de ebulição:</b> ${elementos[index].ebulicao}</p>
+    <p><b>Classificação:</b> ${elementos[index].class}</p>
+    <p><b>Nox:</b> ${elementos[index].nox}</p>
+    <p><b>Distribuição:</b> ${elementos[index].distribuicao}</p>
+    <p><b>Valência:</b> ${elementos[index].valencia}</p>
+    <p><b>Curiosidade:</b> ${elementos[index].curiosidade}</p>
   `;
 }
 
