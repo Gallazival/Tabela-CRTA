@@ -200,7 +200,7 @@ section {
 }
 
 .tabela-wrapper section:hover,
-.tablea-wrapper section:focus {
+.tabela-wrapper section:focus {
   cursor: pointer;
   transform: scale(1.5);
   z-index: 1;
