@@ -59,9 +59,9 @@ function detalharElemento(elemento) {
       <p><b>Ponto de fusão:</b> ${elementos[index].fusao}</p>
       <p><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}</p>
       <p><b>Distribuição:</b> ${elementos[index].distribuicao}</p>
-      <p><b>Nox:</b> ${elementos[index].nox}</p>
       <p><b>Curiosidade:</b> ${elementos[index].curiosidade}</p>
     `;
+    document.querySelector('.pop-up-text section').removeAttribute('tabindex');
   }
   document.querySelector('.focus-wall').style.visibility = 'visible';
   document.querySelector('.pop-up-text').focus();
