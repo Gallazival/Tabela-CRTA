@@ -22,11 +22,11 @@ let lastFocus = document.querySelector('[data-id="1"]');
 
 for (let elemento of elements) {
   elemento.addEventListener('click', () => {
-    detalharElemento(elemento.dataset.id);
+    detalharElemento(elemento);
   });
   elemento.addEventListener('keydown', evt => {
     if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
-      detalharElemento(elemento.dataset.id);
+      detalharElemento(elemento);
     }
   });
   elemento.addEventListener('focusout', () => {
@@ -34,19 +34,22 @@ for (let elemento of elements) {
   });
 }
 
-function detalharElemento(index) {
-  let popElement = document.querySelector('[data-id="'+index+'"]');
+function detalharElemento(elemento) {
+  let index = elemento.dataset.id;
   document.querySelector('.focus-wall').style.visibility = 'visible';
   document.querySelector('.pop-up-text').focus();
   document.querySelector('.pop-up-text').innerHTML = `
-    <section class="${[...popElement.classList].join(' ')}">${popElement.innerHTML}</section>
-    <p><b>Estado:</b> ${elementos[index].estado}</p>
-    <p><b>Temperatura de fusão:</b> ${elementos[index].fusao}</p>
-    <p><b>Temperatura de ebulição:</b> ${elementos[index].ebulicao}</p>
+    ${elemento.outerHTML}
+    <p><b>Nome:</b> ${elementos[index].nome}</p>
+    <p><b>Sigla:</b> ${elementos[index].sigla}</p>
+    <p><b>Número atômico:</b> ${elementos[index].atomico}</p>
+    <p><b>Massa atômica:</b> ${elementos[index].massa} g/mol</p>
     <p><b>Classificação:</b> ${elementos[index].class}</p>
-    <p><b>Nox:</b> ${elementos[index].nox}</p>
+    <p><b>Estado:</b> ${elementos[index].estado}</p>
+    <p><b>Ponto de fusão:</b> ${elementos[index].fusao}</p>
+    <p><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}</p>
     <p><b>Distribuição:</b> ${elementos[index].distribuicao}</p>
-    <p><b>Valência:</b> ${elementos[index].valencia}</p>
+    <p><b>Nox:</b> ${elementos[index].nox}</p>
     <p><b>Curiosidade:</b> ${elementos[index].curiosidade}</p>
   `;
 }

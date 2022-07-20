@@ -38,11 +38,12 @@
   background: rgb(255, 75, 210);
 }
 
-.familia, .periodo {
+.familia,
+.periodo {
   background: rgb(255, 255, 255);
 }
 
-/* {
+/* * {
   -webkit-font-smoothing: antialiased;
   perspective: 1000;
   backface-visibility: hidden;
@@ -72,7 +73,7 @@ b {
   place-self: center;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
-  flex-direction:column;
+  flex-direction: column;
   place-items: center;
   width: 35rem;
   background: rgb(135, 209, 129);
@@ -87,44 +88,36 @@ b {
   transition: transform 0.25s;
 }
 
-.pop-up-text{
-  outline: 1px solid rgb(0, 0, 0);
+.pop-up-text {
   background-color: rgb(238, 233, 233);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
   display: flex;
-  flex-direction:column;
-  margin: 1rem;
+  flex-direction: column;
   text-align: justify;
+  margin-bottom: 1rem;
   padding: 1rem;
 }
 
-.pop-up-text p{
-  padding: 5px;
-}
-
 .pop-up-text section {
-  transition: none;
   width: 4rem;
   height: 4rem;
   align-self: center;
+  transition: none;
+  user-select: none;
+  line-height: normal !important;
 }
 
-.pop-up-text h2{
-  padding: 5px;
+.pop-up-text h2 {
   align-self: center;
-  font-size: 1rem;
 }
 
-.pop-up-text li{
-  padding: 5px;
-}
-.pop-up-text section:hover {
-  transform: none;
-  cursor: unset;
+.pop-up-text > * {
+  line-height: 1.5rem;
 }
 
 .pop-up button:hover,
-.pop-up button:focus{
+.pop-up button:focus {
   cursor: pointer;
   transform: scale(1.2);
   z-index: 1;
@@ -156,8 +149,6 @@ main {
   place-self: center;
   display: grid;
   gap: 0.75rem;
-  /* grid-template-columns: auto auto; */
-  /* grid-template-rows: auto auto; */
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
@@ -208,8 +199,8 @@ section {
   transition: all 0.25s;
 }
 
-section:hover,
-section:focus {
+.tabela-wrapper section:hover,
+.tablea-wrapper section:focus {
   cursor: pointer;
   transform: scale(1.5);
   z-index: 1;
