@@ -26,6 +26,7 @@ for (let elemento of elements) {
   });
   elemento.addEventListener('keydown', evt => {
     if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
+      evt.preventDefault();
       detalharElemento(elemento);
     }
   });
@@ -84,6 +85,7 @@ document.addEventListener('keydown', evt => {
   }
   if (evt.key === 'h' || evt.kay === 'H' || evt.code === 'KeyH') {
     if (evt.altKey) {
+      evt.preventDefault();
       detalharElemento('ajuda');
     }
   }
