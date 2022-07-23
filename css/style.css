@@ -95,11 +95,11 @@ b {
   display: flex;
   flex-direction: column;
   text-align: justify;
-  margin-bottom: 1rem;
+  margin-block: 1rem;
   padding: 1rem;
 }
 
-.pop-up-text section {
+.pop-up section {
   width: 4rem;
   height: 4rem;
   align-self: center;
@@ -186,6 +186,10 @@ main > div {
 
 .hidden {
   visibility: hidden;
+}
+
+.none {
+  display: none;
 }
 
 section {

@@ -1,6 +1,5 @@
 # Tabela CRTA
 ## TO-DO
 
-* Polir o movimento
-* Link dos lantanidios/actinidios para os elementos
 * Botão ajuda
+* `span` indicando a linha e a coluna do elemento
