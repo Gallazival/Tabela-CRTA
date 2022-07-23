@@ -37,6 +37,7 @@ for (let elemento of elements) {
 
 function detalharElemento(elemento) {
   if (elemento === 'ajuda') {
+    document.querySelector('.pop-up section').outerHTML = '<section class="hidden none"></section>';
     document.querySelector('.pop-up-text').innerHTML = `
       <h2><b>Controles:</b></h2>
       <ul>
@@ -49,8 +50,9 @@ function detalharElemento(elemento) {
   }
   else {
     let index = elemento.dataset.id;
+    document.querySelector('.pop-up section').outerHTML = `${elemento.outerHTML}`;
+    document.querySelector('.pop-up section').removeAttribute('tabindex');
     document.querySelector('.pop-up-text').innerHTML = `
-      ${elemento.outerHTML}
       <p><b>Nome:</b> ${elementos[index].nome}</p>
       <p><b>Sigla:</b> ${elementos[index].sigla}</p>
       <p><b>Número atômico:</b> ${elementos[index].atomico}</p>
@@ -62,24 +64,24 @@ function detalharElemento(elemento) {
       <p><b>Distribuição:</b> ${elementos[index].distribuicao}</p>
       <p><b>Curiosidade:</b> ${elementos[index].curiosidade}</p>
     `;
-    document.querySelector('.pop-up-text section').removeAttribute('tabindex');
   }
   document.querySelector('.focus-wall').style.visibility = 'visible';
   document.querySelector('.pop-up-text').focus();
 }
 
 document.addEventListener('keydown', evt => {
-  const popUp = document.querySelector('.pop-up');
+  const firstElement = document.querySelector('.pop-up-text');
+  const lastElement = document.querySelector('.pop-up #fechar');
   if (evt.key === 'Tab' || evt.code === 'Tab') {
     if (evt.shiftKey) {
-      if (document.activeElement === popUp.firstElementChild) {
+      if (document.activeElement === firstElement) {
         evt.preventDefault();
-        popUp.lastElementChild.focus();
+        lastElement.focus();
       }
     } else {
-      if (document.activeElement === popUp.lastElementChild) {
+      if (document.activeElement === lastElement) {
         evt.preventDefault();
-        popUp.firstElementChild.focus();
+        firstElement.focus();
       }
     }
   }
@@ -146,5 +148,19 @@ document.addEventListener('keydown', evt => {
         }
       }
     }
+  }
+});
+
+document.querySelector('[data-id="57-71"]').addEventListener('keydown', evt => {
+  if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
+    evt.preventDefault();
+    document.querySelector('[data-id="57"]').focus();
+  }
+});
+
+document.querySelector('[data-id="89-103"]').addEventListener('keydown', evt => {
+  if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
+    evt.preventDefault();
+    document.querySelector('[data-id="89"]').focus();
   }
 });
