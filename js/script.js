@@ -85,16 +85,22 @@ document.addEventListener('keydown', evt => {
       }
     }
   }
-  if (evt.key === 'h' || evt.kay === 'H' || evt.code === 'KeyH') {
+  if (evt.key === 'h' || evt.key === 'H' || evt.code === 'KeyH') {
     if (evt.altKey) {
       evt.preventDefault();
       detalharElemento('ajuda');
     }
   }
-});
-
-document.querySelector('#fechar').addEventListener('focusout', () => {
-  if (document.querySelector('.focus-wall').style.visibility === 'hidden') {
+  if (evt.target === lastElement) {
+    if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
+      evt.preventDefault();
+      document.querySelector('.focus-wall').style.visibility = 'hidden';
+      lastFocus.focus();
+    }
+  }
+  if (evt.key === 'Escape' || evt.code === 'Escape') {
+    evt.preventDefault();
+    document.querySelector('.focus-wall').style.visibility = 'hidden';
     lastFocus.focus();
   }
 });
@@ -104,7 +110,7 @@ document.addEventListener('keydown', evt => {
   for (let periodo in tabela) {
     for (let familia in tabela[periodo]) {
       if (tabela[periodo][familia].toString() === activeElement.dataset.id) {
-        if (evt.altKey) {
+        if (evt.altKey && evt.ctrlKey) {
           if (evt.key === 'ArrowUp' || evt.code === 'ArrowUp') {
             let upperElement = tabela[parseInt(periodo) - 1][parseInt(familia)];
             if (upperElement === '') {
