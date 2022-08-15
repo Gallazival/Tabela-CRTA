@@ -41,8 +41,8 @@ function detalharElemento(elemento) {
     document.querySelector('.pop-up-text').innerHTML = `
       <h2><b>Controles:</b></h2>
       <ul>
-        <li>Use a tecla Alt + setas do teclado para navegar entre os elementos da tabela</li>
-        <li>Use a tecla Enter para acessar os elementos em geral</li>
+        <li>Use a tecla Ctrl + Alt + setas do teclado para navegar entre os elementos da tabela</li>
+        <li>Use a tecla Enter para acessar os elementos em geral e ESC para fechar os pop-ups</li>
         <li>Os atalhos Tab e Shift+Tab também funcionam</li>
         <li>Se precisar revisar esta informação, aperte Alt+h</li>
       </ul>
