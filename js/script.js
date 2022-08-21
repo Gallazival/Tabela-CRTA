@@ -111,6 +111,7 @@ function detalhar() {
 }
 
 function help() {
+  $('.display tr').html('');
   $(this).html(`
     <b>Controles:</b>
     <ul>
