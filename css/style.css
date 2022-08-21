@@ -68,6 +68,9 @@ main {
 
 table {
   border-collapse: separate;
+}
+
+table.tabela {
   border-spacing: 3px;
 }
 
@@ -83,9 +86,10 @@ table td.elemento {
   text-align: center;
   vertical-align: middle;
   transition: all 0.25s;
+  user-select: none;
 }
 
-table td[colspan] {
+table td.hidden {
   visibility: hidden;
 }
 
@@ -109,7 +113,7 @@ span.elemento-massa {
   font-size: 0.6rem;
 }
 
-main table td:where(:hover, :focus) {
+.tabela td:where(:hover, :focus) {
   cursor: pointer;
   transform: scale(1.5);
   z-index: 1;
@@ -128,7 +132,7 @@ div.wall {
 }
 
 div.pop-up {
-  width: min-content;
+  max-width: 35rem;
   background: #87d181;
   border: 1px solid #000;
   border-radius: 5px;
@@ -138,16 +142,17 @@ div.pop-up {
   align-items: center;
 }
 
-div.pop-up div.content {
+div.content {
   align-self: stretch;
   background-color: #eee9e9;
   border: 1px solid #000;
   border-radius: 5px;
   padding: 1rem;
   margin-block: 0.5rem;
+  line-height: 1.5rem;
 }
 
-div.pop-up button {
+button.fechar {
   border: 1px solid #000;
   border-radius: 2.5px;
   padding-inline: 0.5rem;
@@ -155,6 +160,16 @@ div.pop-up button {
   background: #fff;
 }
 
-div.pop-up button:where(:hover, :focus) {
-  background-color: #e8e3e3;
+button.fechar:where(:hover, :focus) {
+  cursor: pointer;
+  background-color: #c6b9b9;
+}
+
+b {
+  all: revert;
+}
+
+:focus {
+  border-color: #f00 !important;
+  outline-color: #f00 !important;
 }
