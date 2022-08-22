@@ -19,7 +19,7 @@ $(document).ready(function () {
         help.call($('.content'));
       }
       if (e.key === 't' || e.key === 'T' || e.code === 'KeyT') {
-        $('.elemento').first().focus();
+        $('.tabela .elemento').first().focus();
       }
     }
   });
@@ -60,14 +60,14 @@ $(document).ready(function () {
     if (e.ctrlKey && e.altKey) {
       if (e.key === 'ArrowRight' || e.code === 'ArrowRight') {
         e.preventDefault();
-        $('.elemento')
-          .get($('.elemento').index($(':focus')) + 1)
+        $('.tabela .elemento')
+          .get($('.tabela .elemento').index($(':focus')) + 1)
           .focus();
       }
       if (e.key === 'ArrowLeft' || e.code === 'ArrowLeft') {
         e.preventDefault();
-        $('.elemento')
-          .get(Math.abs($('.elemento').index($(':focus')) - 1))
+        $('.tabela .elemento')
+          .get(Math.abs($('.tabela .elemento').index($(':focus')) - 1))
           .focus();
       }
       if (e.key === 'ArrowUp' || e.code === 'ArrowUp') {
@@ -85,7 +85,7 @@ $(document).ready(function () {
     }
   });
 
-  $('.elemento').on({
+  $('.tabela .elemento').on({
     click: detalhar,
     keydown: (e) => {
       if (e.key === 'Enter' || e.code === 'Enter' || e.code === 'NumpadEnter') {
