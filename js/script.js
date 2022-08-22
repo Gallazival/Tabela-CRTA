@@ -126,6 +126,7 @@ $(document).ready(function () {
       <b>Controles:</b>
       <ul>
         <li>Use os atalhos Tab e Shift + Tab para navegação padrão;</li>
+        <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela;</li>
         <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela;</li>
         <li>Use a tecla Enter para acessar os elementos e a tecla ESC para fechar os pop-ups;</li>
         <li>Se precisar revisar esta informação, aperte Ctrl + Alt + H.</li>
