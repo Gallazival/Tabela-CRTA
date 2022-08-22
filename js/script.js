@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   $(document).keydown((e) => {
     if (e.key === 'Escape' || e.code === 'Escape') {
-      if (!$('.wall').is(':hidden')) {
+      if ($('.wall').is(':visible')) {
         $('.wall').hide();
         if (lastFocus) {
           lastFocus.focus();
