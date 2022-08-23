@@ -15,7 +15,7 @@ header img {
   height: 6rem;
 }
 
-header .title {
+.title {
   background: #ffffffd7;
   border: 1px solid #000;
   border-radius: 5px;
@@ -68,39 +68,27 @@ main {
 
 table {
   border-collapse: separate;
-}
-
-.tabela {
   border-spacing: 3px;
 }
 
-td {
+td * {
+  display: block;
+}
+
+.elemento {
   --tamanho: 4rem;
   width: var(--tamanho);
+  height: var(--tamanho);
   border: 1px solid #000;
   border-radius: 5px;
   position: relative;
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  /* transition: all 0.25s; */
-}
-
-.elemento {
-  height: var(--tamanho);
-}
-
-.familia {
-  height: calc(var(--tamanho) / 2);
-  background: #fff;
 }
 
 .hidden {
   visibility: hidden;
-}
-
-td * {
-  display: block;
 }
 
 .elemento-numero {
