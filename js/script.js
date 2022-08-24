@@ -106,10 +106,10 @@ $(document).ready(function () {
     $('.display td').replaceWith($(this).clone().removeAttr('tabindex'));
     $('.content').html(`
       <ul>
-        <li><b>Nome:</b> ${elementos[index].nome}.</li>
-        <li><b>Sigla:</b> ${elementos[index].sigla}.</li>
-        <li><b>Número atômico:</b> ${elementos[index].atomico}.</li>
-        <li><b>Massa atômica:</b> ${elementos[index].massa} g/mol.</li>
+        <!-- <li><b>Nome:</b> ${elementos[index].nome}.</li> -->
+        <!-- <li><b>Sigla:</b> ${elementos[index].sigla}.</li> -->
+        <!-- <li><b>Número atômico:</b> ${elementos[index].atomico}.</li> -->
+        <!-- <li><b>Massa atômica:</b> ${elementos[index].massa} g/mol.</li> -->
         <li><b>Classificação:</b> ${elementos[index].class}.</li>
         <li><b>Estado:</b> ${elementos[index].estado}.</li>
         <li><b>Ponto de fusão:</b> ${elementos[index].fusao}.</li>

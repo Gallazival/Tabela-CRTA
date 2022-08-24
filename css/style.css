@@ -16,6 +16,7 @@ header img {
 }
 
 .title {
+  font-size: 2rem;
   background: #ffffffd7;
   border: 1px solid #000;
   border-radius: 5px;
@@ -23,9 +24,8 @@ header img {
   text-align: center;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
+b {
+  all: revert;
 }
 
 .nao-metal {
@@ -88,14 +88,17 @@ td * {
 }
 
 .hidden {
-  visibility: hidden;
+  visibility: hidden !important;
+}
+
+em {
+  font-size: none !important;
 }
 
 .elemento-numero {
   font-size: 0.75rem;
   position: absolute;
-  top: 2px;
-  left: 2px;
+  inset: 2px 0 0 2px;
 }
 
 .elemento-sigla {
@@ -157,10 +160,6 @@ td * {
 .fechar:where(:hover, :focus) {
   cursor: pointer;
   background-color: #c6b9b9;
-}
-
-b {
-  all: revert;
 }
 
 :focus {
