@@ -2,7 +2,7 @@ body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
-header {
+.header {
   background: #41db335e;
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,7 @@ header {
   padding-block: 0.5rem;
 }
 
-header img {
+.header img {
   height: 6rem;
 }
 
@@ -59,7 +59,7 @@ b {
   background: #ff4bd2;
 }
 
-main {
+.main {
   display: grid;
   place-items: center;
   gap: 1rem;
