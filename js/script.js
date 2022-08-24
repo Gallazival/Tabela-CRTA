@@ -1,7 +1,7 @@
 import { elementos } from './elementos.js';
 
 $(document).ready(function () {
-  let lastFocus;
+  let lastFocus = $('.elemento').first();
 
   help.call($('.content'));
 
@@ -14,10 +14,12 @@ $(document).ready(function () {
         }
       }
     }
-    if (e.ctrlKey && e.altKey) {
+    if (e.altKey) {
       if (e.key === 'h' || e.key === 'H' || e.code === 'KeyH') {
         help.call($('.content'));
       }
+    }
+    if (e.ctrlKey && e.altKey) {
       if (e.key === 't' || e.key === 'T' || e.code === 'KeyT') {
         if ($('.wall').is(':hidden')) {
           $('.tabela .elemento').first().focus();
