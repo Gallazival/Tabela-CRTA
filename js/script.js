@@ -9,9 +9,7 @@ $(document).ready(function () {
     if (e.key === 'Escape' || e.code === 'Escape') {
       if ($('.wall').is(':visible')) {
         $('.wall').hide();
-        if (lastFocus) {
-          lastFocus.focus();
-        }
+        lastFocus.focus();
       }
     }
     if (e.altKey) {
@@ -54,7 +52,7 @@ $(document).ready(function () {
       }
     },
     blur: () => {
-      if (lastFocus && $('.wall').is(':hidden')) {
+      if ($('.wall').is(':hidden')) {
         lastFocus.focus();
       }
     },
