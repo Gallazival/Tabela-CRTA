@@ -60,10 +60,8 @@ b {
 }
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  display: grid;
+  place-items: center;
 }
 
 table {
