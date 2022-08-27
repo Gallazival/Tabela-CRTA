@@ -1,172 +1,142 @@
 import { elementos } from './elementos.js';
 
-const emptyArray = (size, content) => new Array(size).fill('');
-const numberArray = (start, end) => [...Array(end - start + 1).keys()].map(num => num + start);
+$(document).ready(function () {
+  let lastFocus = $('.elemento').first();
 
-const tabela = [
-  [...emptyArray(18)],
-  [1, ...emptyArray(16), 2],
-  [3, 4, ...emptyArray(10), ...numberArray(5, 10)],
-  [11, 12, ...emptyArray(10), ...numberArray(13, 18)],
-  [...numberArray(19, 36)],
-  [...numberArray(37, 54)],
-  [55, 56, '57-71', ...numberArray(72, 86)],
-  [87, 88, '89-103', ...numberArray(104, 118)],
-  [...emptyArray(3), ...numberArray(57, 71)],
-  [...emptyArray(3), ...numberArray(89, 103)],
-  [...emptyArray(18)],
-];
+  help.call($('.content'));
 
-const elements = document.getElementsByClassName('elemento');
-let lastFocus = document.querySelector('[data-id="1"]');
-
-for (let elemento of elements) {
-  elemento.addEventListener('click', () => {
-    detalharElemento(elemento);
-  });
-  elemento.addEventListener('keydown', evt => {
-    if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
-      evt.preventDefault();
-      detalharElemento(elemento);
-    }
-  });
-  elemento.addEventListener('focusout', () => {
-    return lastFocus = elemento;
-  });
-}
-
-function detalharElemento(elemento) {
-  if (elemento === 'ajuda') {
-    document.querySelector('.pop-up section').outerHTML = '<section class="hidden none"></section>';
-    document.querySelector('.pop-up-text').innerHTML = `
-      <h2><b>Controles:</b></h2>
-      <ul>
-        <li>Use a tecla Ctrl + Alt + setas do teclado para navegar entre os elementos da tabela</li>
-        <li>Use a tecla Enter para acessar os elementos em geral e ESC para fechar os pop-ups</li>
-        <li>Os atalhos Tab e Shift+Tab também funcionam</li>
-        <li>Se precisar revisar esta informação, aperte Alt+h</li>
-      </ul>
-    `;
-  }
-  else {
-    let index = elemento.dataset.id;
-    document.querySelector('.pop-up section').outerHTML = `${elemento.outerHTML}`;
-    document.querySelector('.pop-up section').removeAttribute('tabindex');
-    document.querySelector('.pop-up-text').innerHTML = `
-      <p><b>Nome:</b> ${elementos[index].nome}</p>
-      <p><b>Sigla:</b> ${elementos[index].sigla}</p>
-      <p><b>Número atômico:</b> ${elementos[index].atomico}</p>
-      <p><b>Massa atômica:</b> ${elementos[index].massa} g/mol</p>
-      <p><b>Classificação:</b> ${elementos[index].class}</p>
-      <p><b>Estado:</b> ${elementos[index].estado}</p>
-      <p><b>Ponto de fusão:</b> ${elementos[index].fusao}</p>
-      <p><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}</p>
-      <p><b>Distribuição:</b> ${elementos[index].distribuicao}</p>
-      <p><b>Curiosidade:</b> ${elementos[index].curiosidade}</p>
-    `;
-  }
-  document.querySelector('.focus-wall').style.visibility = 'visible';
-  document.querySelector('.pop-up-text').focus();
-}
-
-document.addEventListener('keydown', evt => {
-  const firstElement = document.querySelector('.pop-up-text');
-  const lastElement = document.querySelector('.pop-up #fechar');
-  if (evt.key === 'Tab' || evt.code === 'Tab') {
-    if (evt.shiftKey) {
-      if (document.activeElement === firstElement) {
-        evt.preventDefault();
-        lastElement.focus();
-      }
-    } else {
-      if (document.activeElement === lastElement) {
-        evt.preventDefault();
-        firstElement.focus();
+  $(document).keydown((e) => {
+    if (e.key === 'Escape' || e.code === 'Escape') {
+      if ($('.wall').is(':visible')) {
+        $('.wall').hide();
+        lastFocus.focus();
       }
     }
-  }
-  if (evt.key === 'h' || evt.key === 'H' || evt.code === 'KeyH') {
-    if (evt.altKey) {
-      evt.preventDefault();
-      detalharElemento('ajuda');
+    if (e.altKey) {
+      if (e.key === 'h' || e.key === 'H' || e.code === 'KeyH') {
+        help.call($('.content'));
+      }
     }
-  }
-  if (evt.target === lastElement) {
-    if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
-      evt.preventDefault();
-      document.querySelector('.focus-wall').style.visibility = 'hidden';
-      lastFocus.focus();
-    }
-  }
-  if (evt.key === 'Escape' || evt.code === 'Escape') {
-    evt.preventDefault();
-    document.querySelector('.focus-wall').style.visibility = 'hidden';
-    lastFocus.focus();
-  }
-});
-
-document.addEventListener('keydown', evt => {
-  const activeElement = document.activeElement;
-  for (let periodo in tabela) {
-    for (let familia in tabela[periodo]) {
-      if (tabela[periodo][familia].toString() === activeElement.dataset.id) {
-        if (evt.altKey && evt.ctrlKey) {
-          if (evt.key === 'ArrowUp' || evt.code === 'ArrowUp') {
-            let upperElement = tabela[parseInt(periodo) - 1][parseInt(familia)];
-            if (upperElement === '') {
-              break;
-            }
-            else {
-              evt.preventDefault();
-              document.querySelector(`[data-id='${upperElement}']`).focus();
-            }
-          }
-          if (evt.key === 'ArrowDown' || evt.code === 'ArrowDown') {
-            let lowerElement = tabela[parseInt(periodo) + 1][parseInt(familia)];
-            if (lowerElement === '') {
-              break;
-            }
-            else {
-              evt.preventDefault();
-              document.querySelector(`[data-id='${lowerElement}']`).focus();
-            }
-          }
-          if (evt.key === 'ArrowRight' || evt.code === 'ArrowRight') {
-            let nextElement = activeElement.nextElementSibling;
-            evt.preventDefault();
-            if (nextElement.classList.contains('hidden')) {
-              nextElement.nextElementSibling.focus();
-            }
-            else {
-              nextElement.focus();
-            }
-          }
-          if (evt.key === 'ArrowLeft' || evt.code === 'ArrowLeft') {
-            let previousElement = activeElement.previousElementSibling;
-            evt.preventDefault();
-            if (previousElement.classList.contains('hidden')) {
-              previousElement.previousElementSibling.focus();
-            }
-            else {
-              previousElement.focus();
-            }
-          }
+    if (e.ctrlKey && e.altKey) {
+      if (e.key === 't' || e.key === 'T' || e.code === 'KeyT') {
+        if ($('.wall').is(':hidden')) {
+          $('.tabela .elemento').first().focus();
         }
       }
     }
-  }
-});
+  });
 
-document.querySelector('[data-id="57-71"]').addEventListener('keydown', evt => {
-  if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
-    evt.preventDefault();
-    document.querySelector('[data-id="57"]').focus();
-  }
-});
+  $('.pop-up').on('keydown', '.content', (e) => {
+    if (e.shiftKey) {
+      if (e.key === 'Tab' || e.code === 'Tab') {
+        e.preventDefault();
+        $('.fechar').focus();
+      }
+    }
+  });
 
-document.querySelector('[data-id="89-103"]').addEventListener('keydown', evt => {
-  if (evt.key === 'Enter' || evt.code === 'Enter' || evt.code === 'NumpadEnter') {
-    evt.preventDefault();
-    document.querySelector('[data-id="89"]').focus();
+  $('.pop-up').on('keydown', '.fechar', (e) => {
+    if (e.key === 'Tab' || e.code === 'Tab') {
+      e.preventDefault();
+      $('.content').focus();
+    }
+  });
+
+  $('.fechar').on({
+    click: () => {
+      $('.wall').hide();
+    },
+    keydown: (e) => {
+      if (e.key === 'Enter' || e.code === 'Enter' || e.code === 'NumpadEnter') {
+        $('.wall').hide();
+      }
+    },
+    blur: () => {
+      if ($('.wall').is(':hidden')) {
+        lastFocus.focus();
+      }
+    },
+  });
+
+  $('.tabela').on('keydown', '.elemento', (e) => {
+    if (e.ctrlKey && e.altKey) {
+      if (e.key === 'ArrowRight' || e.code === 'ArrowRight') {
+        e.preventDefault();
+        $('.tabela .elemento')
+          .get($('.tabela .elemento').index($(':focus')) + 1)
+          .focus();
+      }
+      if (e.key === 'ArrowLeft' || e.code === 'ArrowLeft') {
+        e.preventDefault();
+        $('.tabela .elemento')
+          .get(Math.abs($('.tabela .elemento').index($(':focus')) - 1))
+          .focus();
+      }
+      if (e.key === 'ArrowUp' || e.code === 'ArrowUp') {
+        e.preventDefault();
+        $('.tabela td')
+          .get(Math.abs($('.tabela td').index($(':focus')) - 18))
+          .focus();
+      }
+      if (e.key === 'ArrowDown' || e.code === 'ArrowDown') {
+        e.preventDefault();
+        $('.tabela td')
+          .get($('.tabela td').index($(':focus')) + 18)
+          .focus();
+      }
+    }
+  });
+
+  $('.tabela .elemento').on({
+    click: detalhar,
+    keydown: (e) => {
+      if (e.key === 'Enter' || e.code === 'Enter' || e.code === 'NumpadEnter') {
+        detalhar.call($(':focus'));
+      }
+    },
+  });
+
+  function detalhar() {
+    if ($(this).hasClass('atalho')) {
+      $('.atalho').index($(':focus')) ? $('.actinidio')[1].focus() : $('.lantanideo')[1].focus();
+      return;
+    }
+    lastFocus = $(this);
+    const index = $(this).data('id');
+    $('.display td').replaceWith($(this).clone().removeAttr('tabindex'));
+    $('.content').html(`
+      <ul>
+        <li><b>Nome:</b> ${elementos[index].nome}.</li>
+        <li><b>Sigla:</b> ${elementos[index].sigla}.</li>
+        <li><b>Número atômico:</b> ${elementos[index].atomico}.</li>
+        <li><b>Massa atômica:</b> ${elementos[index].massa} g/mol.</li>
+        <li><b>Classificação:</b> ${elementos[index].class}.</li>
+        <li><b>Estado:</b> ${elementos[index].estado}.</li>
+        <li><b>Ponto de fusão:</b> ${elementos[index].fusao}.</li>
+        <li><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}.</li>
+        <li><b>Distribuição:</b> ${elementos[index].distribuicao}.</li>
+        <li><b>Curiosidade:</b> ${elementos[index].curiosidade}.</li>
+      </ul>
+    `);
+    $('.wall').show();
+    $('.display').show();
+    $('.content').focus();
+  }
+
+  function help() {
+    $('.display td').replaceWith('<td></td>');
+    $(this).html(`
+      <b>Controles:</b>
+      <ul>
+        <li>Use os atalhos Tab e Shift + Tab para navegação padrão.</li>
+        <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela.</li>
+        <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela.</li>
+        <li>Use a tecla Enter para datalhar os elementos e a tecla ESC para fechar a descrição.</li>
+        <li>Se precisar revisar esta informação, aperte Alt + H.</li>
+      </ul>
+    `);
+    $('.wall').show();
+    $('.display').hide();
+    $('.content').focus();
   }
 });
