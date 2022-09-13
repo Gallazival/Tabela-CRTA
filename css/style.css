@@ -102,11 +102,19 @@ em {
 
 .elemento-sigla {
   font-weight: 700;
+  position: absolute;
+  inset: 0.75rem 0 0 0;
 }
 
-.elemento-nome,
+.elemento-nome {
+  font-size: 0.6rem;
+  position: absolute;
+  inset: 2rem 0 0 0;
+}
 .elemento-massa {
   font-size: 0.6rem;
+  position: absolute;
+  inset: 2.75rem 0 0 0;
 }
 
 .tabela td:where(:hover, :focus) {
