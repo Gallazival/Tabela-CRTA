@@ -38,7 +38,7 @@ $(document).ready(function () {
   $('.pop-up').on('keydown', '.fechar', (e) => {
     if (e.key === 'Tab' || e.code === 'Tab') {
       e.preventDefault();
-      $('.content').focus();
+      $('.content .read').focus();
     }
   });
 
@@ -110,33 +110,39 @@ $(document).ready(function () {
         <li><b>Sigla:</b> ${elementos[index].sigla}.</li>
         <li><b>Número atômico:</b> ${elementos[index].atomico}.</li>
         <li><b>Massa atômica:</b> ${elementos[index].massa} g/mol.</li>
-        <li><b>Classificação:</b> ${elementos[index].class}.</li>
-        <li><b>Estado:</b> ${elementos[index].estado}.</li>
-        <li><b>Ponto de fusão:</b> ${elementos[index].fusao}.</li>
-        <li><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}.</li>
-        <li><b>Distribuição:</b> ${elementos[index].distribuicao}.</li>
-        <li><b>Curiosidade:</b> ${elementos[index].curiosidade}.</li>
       </ul>
+      <div class="read" tabindex="0">
+        <ul>
+          <li><b>Classificação:</b> ${elementos[index].class}.</li>
+          <li><b>Estado:</b> ${elementos[index].estado}.</li>
+          <li><b>Ponto de fusão:</b> ${elementos[index].fusao}.</li>
+          <li><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}.</li>
+          <li><b>Distribuição:</b> ${elementos[index].distribuicao}.</li>
+          <li><b>Curiosidade:</b> ${elementos[index].curiosidade}.</li>
+        </ul>
+      </div>
     `);
     $('.wall').show();
     $('.display').show();
-    $('.content').focus();
+    $('.content .read').focus();
   }
 
   function help() {
     $('.display td').replaceWith('<td></td>');
     $(this).html(`
-      <b>Controles:</b>
-      <ul>
-        <li>Use os atalhos Tab e Shift + Tab para navegação padrão.</li>
-        <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela.</li>
-        <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela.</li>
-        <li>Use a tecla Enter para datalhar os elementos e a tecla ESC para fechar a descrição.</li>
-        <li>Se precisar revisar esta informação, aperte Alt + H.</li>
-      </ul>
+      <div class="read" tabindex="0">
+        <b>Controles:</b>
+        <ul>
+          <li>Use os atalhos Tab e Shift + Tab para navegação padrão.</li>
+          <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela.</li>
+          <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela.</li>
+          <li>Use a tecla Enter para datalhar os elementos e a tecla ESC para fechar a descrição.</li>
+          <li>Se precisar revisar esta informação, aperte Alt + H.</li>
+        </ul>
+      </div>
     `);
     $('.wall').show();
     $('.display').hide();
-    $('.content').focus();
+    $('.content .read').focus();
   }
 });
