@@ -16,12 +16,15 @@ body {
 }
 
 .title {
-  font-size: 2rem;
   background: #ffffffd7;
   border: 1px solid #000;
   border-radius: 5px;
   padding: 0.5rem;
   text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 b {
@@ -153,6 +156,7 @@ em {
   line-height: 1.5rem;
 }
 
+.ajuda,
 .fechar {
   border: 1px solid #000;
   border-radius: 2.5px;
@@ -161,6 +165,7 @@ em {
   background: #fff;
 }
 
+.ajuda:where(:hover, :focus),
 .fechar:where(:hover, :focus) {
   cursor: pointer;
   background-color: #c6b9b9;
