@@ -1,22 +1,27 @@
 import { elementos } from './elementos.js';
 
 $(document).ready(function () {
+  // guardar último elemento em foco na tabela
   let lastFocus = $('.elemento').first();
 
+  // mostrar modal de ajuda
   help.call($('.content'));
 
   $(document).keydown((e) => {
+    // fecha o modal com ESC
     if (e.key === 'Escape' || e.code === 'Escape') {
       if ($('.wall').is(':visible')) {
         $('.wall').hide();
         lastFocus.focus();
       }
     }
+    // abre o modal de ajuda
     if (e.altKey) {
       if (e.key === 'h' || e.key === 'H' || e.code === 'KeyH') {
         help.call($('.content'));
       }
     }
+    // pula para o primeiro elemento da tabela
     if (e.ctrlKey && e.altKey) {
       if (e.key === 't' || e.key === 'T' || e.code === 'KeyT') {
         if ($('.wall').is(':hidden')) {
@@ -27,6 +32,7 @@ $(document).ready(function () {
   });
 
   $('.pop-up').on('keydown', '.content', (e) => {
+    // prende o foco no modal
     if (e.shiftKey) {
       if (e.key === 'Tab' || e.code === 'Tab') {
         e.preventDefault();
@@ -36,21 +42,38 @@ $(document).ready(function () {
   });
 
   $('.pop-up').on('keydown', '.fechar', (e) => {
+    // prende o foco no modal
     if (e.key === 'Tab' || e.code === 'Tab') {
       e.preventDefault();
       $('.content .read').focus();
     }
   });
 
+  $('.ajuda').on({
+    // abre o modal de ajuda
+    click: () => {
+      help.call($('.content'));
+    },
+    // abre o modal de ajuda com ENTER
+    keydown: (e) => {
+      if (e.key === 'Enter' || e.code === 'Enter' || e.code === 'NumpadEnter') {
+        help.call($('.content'));
+      }
+    },
+  });
+
   $('.fechar').on({
+    // fecha o modal com clique no botão
     click: () => {
       $('.wall').hide();
     },
+    // fecha o modal com ENTER
     keydown: (e) => {
       if (e.key === 'Enter' || e.code === 'Enter' || e.code === 'NumpadEnter') {
         $('.wall').hide();
       }
     },
+    // volta o foco ao elemento
     blur: () => {
       if ($('.wall').is(':hidden')) {
         lastFocus.focus();
@@ -58,6 +81,7 @@ $(document).ready(function () {
     },
   });
 
+  // define os controles Ctrl + Alr + Setas
   $('.tabela').on('keydown', '.elemento', (e) => {
     if (e.ctrlKey && e.altKey) {
       if (e.key === 'ArrowRight' || e.code === 'ArrowRight') {
@@ -87,6 +111,7 @@ $(document).ready(function () {
     }
   });
 
+  // abrindo os detalhes de um elemento
   $('.tabela .elemento').on({
     click: detalhar,
     keydown: (e) => {
@@ -105,14 +130,17 @@ $(document).ready(function () {
     const index = $(this).data('id');
     $('.display td').replaceWith($(this).clone().removeAttr('tabindex'));
     $('.content').html(`
-      <ul>
-        <li><b>Nome:</b> ${elementos[index].nome}.</li>
-        <li><b>Sigla:</b> ${elementos[index].sigla}.</li>
-        <li><b>Número atômico:</b> ${elementos[index].atomico}.</li>
-        <li><b>Massa atômica:</b> ${elementos[index].massa} g/mol.</li>
-      </ul>
+      <div class="show" tabindex="0">
+        <ul>
+          <li><b>Nome:</b> ${elementos[index].nome}.</li>
+          <li><b>Sigla:</b> ${elementos[index].sigla}.</li>
+          <li><b>Número atômico:</b> ${elementos[index].atomico}.</li>
+          <li><b>Massa atômica:</b> ${elementos[index].massa} g/mol.</li>
+        </ul>
+      <div>
       <div class="read" tabindex="0">
         <ul>
+          <li><b>Família:</b> ${elementos[index].familia}.</li>
           <li><b>Classificação:</b> ${elementos[index].class}.</li>
           <li><b>Estado:</b> ${elementos[index].estado}.</li>
           <li><b>Ponto de fusão:</b> ${elementos[index].fusao}.</li>
