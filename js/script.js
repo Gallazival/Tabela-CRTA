@@ -156,6 +156,7 @@ $(document).ready(function () {
   }
 
   function help() {
+    lastFocus = $(':focus');
     $('.display td').replaceWith('<td></td>');
     $(this).html(`
       <div class="read" tabindex="0">
