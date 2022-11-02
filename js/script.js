@@ -1,4 +1,4 @@
-import { elementos } from './elementos.js';
+import elementos from './json/elementos.json' assert { type: 'json' };
 
 $(document).ready(function () {
   // guardar último elemento em foco na tabela
@@ -141,7 +141,7 @@ $(document).ready(function () {
       <div class="read" tabindex="0">
         <ul>
           <li><b>Família:</b> ${elementos[index].familia}.</li>
-          <li><b>Classificação:</b> ${elementos[index].class}.</li>
+          <li><b>Classificação:</b> ${elementos[index].classe}.</li>
           <li><b>Estado:</b> ${elementos[index].estado}.</li>
           <li><b>Ponto de fusão:</b> ${elementos[index].fusao}.</li>
           <li><b>Ponto de ebulição:</b> ${elementos[index].ebulicao}.</li>
