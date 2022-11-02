@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
@@ -29,7 +29,7 @@ h1 {
 
 b {
   all: revert;
-}
+} */
 
 .nao-metal {
   background: #caff3a;
@@ -62,11 +62,11 @@ b {
   background: #ff4bd2;
 }
 
-.main {
+/* .main {
   display: grid;
   place-items: center;
   gap: 1rem;
-}
+} */
 
 table {
   border-collapse: separate;
@@ -156,7 +156,7 @@ em {
   line-height: 1.5rem;
 }
 
-.ajuda,
+/* .ajuda, */
 .fechar {
   border: 1px solid #000;
   border-radius: 2.5px;
