@@ -2,7 +2,7 @@ import { elementos } from './elementos.js';
 
 $(document).ready(function () {
   // guardar último elemento em foco na tabela
-  let lastFocus = $('.elemento').first();
+  let lastFocus = $('body');
 
   // mostrar modal de ajuda
   help.call($('.content'));
@@ -165,7 +165,7 @@ $(document).ready(function () {
           <li>Use os atalhos Tab e Shift + Tab para navegação padrão.</li>
           <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela.</li>
           <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela.</li>
-          <li>Use a tecla Enter para datalhar os elementos e a tecla ESC para fechar a descrição.</li>
+          <li>Use a tecla Enter para detalhar os elementos e a tecla ESC para fechar a descrição.</li>
           <li>Se precisar revisar esta informação, aperte Alt + H.</li>
         </ul>
       </div>
