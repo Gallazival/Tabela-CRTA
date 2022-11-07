@@ -126,7 +126,7 @@ em {
   z-index: 1;
 }
 
-.wall {
+/* .wall {
   position: fixed !important;
   inset: 0 0 0 0 !important;
   z-index: 999 !important;
@@ -156,7 +156,6 @@ em {
   line-height: 1.5rem;
 }
 
-/* .ajuda, */
 .fechar {
   border: 1px solid #000;
   border-radius: 2.5px;
@@ -174,4 +173,4 @@ em {
 :focus {
   border-color: #f00 !important;
   outline-color: #f00 !important;
-}
+} */

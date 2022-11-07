@@ -25,7 +25,7 @@
           <h1 class="text-light" tabindex="0">Tabela Periódica Assistiva</h1>
         </div>
         <div class="col text-right align-self-center">
-          <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalElemento">AJUDA</button>
+          <button type="button" class="btn btn-light ajuda" data-toggle="modal" data-target="#modalElemento">AJUDA</button>
         </div>
       </div>
     </header>
@@ -938,12 +938,18 @@
     </main>
 
     <div class="modal" id="modalElemento" tabindex="-1" role="dialog" aria-labelledby="modalElementoLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalElementoLabel">Modal title</h5>
+          <div class="modal-header justify-content-center">
+            <table class="modal-title" id="modalElementoLabel">
+              <tr>
+                <td></td>
+              </tr>
+            </table>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <ul></ul>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
