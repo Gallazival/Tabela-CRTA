@@ -5,33 +5,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabela Periódica CRTA</title>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <title>Tabela Periódica Assistiva</title>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="./js/script.js" type="module"></script>
   </head>
 
   <body>
-    <div class="header">
-      <img src="./img/cta.png" alt="logo CTA" tabindex="0" />
-      <div class="title" tabindex="0">
-        <h1><b>TABELA PERIÓDICA CRTA</b></h1>
-        <button class="ajuda">AJUDA</button>
+    <header class="container-fluid bg-success p-3">
+      <div class="row">
+        <div class="col text-left align-self-center">
+          <img src="./img/cta.png" class="img-fluid" alt="" tabindex="0" />
+        </div>
+        <div class="col-7 text-center align-self-center">
+          <h1 class="text-light" tabindex="0">Tabela Periódica Assistiva</h1>
+        </div>
+        <div class="col text-right align-self-center">
+          <button type="button" class="btn btn-light ajuda" data-toggle="modal" data-target="#modalElemento">AJUDA</button>
+        </div>
       </div>
-      <img src="./img/ifrs.png" alt="logo IFRS" tabindex="0" />
-    </div>
+    </header>
 
-    <div class="main">
+    <main class="m-3 d-flex align-items-center justify-content-center">
       <table class="tabela">
         <tbody>
           <tr>
-            <td class="elemento nao-metal" tabindex="0" data-id="1">
-              <span class="elemento-nome"><em>Nome:</em>Hidrogênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>1</span>
-              <span class="elemento-sigla"><em>Sigla:</em>H</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>1,008</span>
+            <td class="elemento nao-metal" tabindex="0" data-id="1" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Hidrogênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>1</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>H</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>1,008</li>
+              </ul>
             </td>
 
             <td class="hidden"></td>
@@ -51,27 +60,33 @@
             <td class="hidden"></td>
             <td class="hidden"></td>
 
-            <td class="elemento gas-nobre" tabindex="0" data-id="2">
-              <span class="elemento-nome"><em>Nome:</em>Hélio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>2</span>
-              <span class="elemento-sigla"><em>Sigla:</em>He</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>4,0026</span>
+            <td class="elemento gas-nobre" tabindex="0" data-id="2" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Hélio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>2</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>He</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>4,0026</li>
+              </ul>
             </td>
           </tr>
 
           <tr>
-            <td class="elemento metal-alcalino" tabindex="0" data-id="3">
-              <span class="elemento-nome"><em>Nome:</em>Lítio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>3</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Li</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>6,64</span>
+            <td class="elemento metal-alcalino" tabindex="0" data-id="3" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Lítio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>3</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Li</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>6,64</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="4">
-              <span class="elemento-nome"><em>Nome:</em>Berílio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>4</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Be</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>9,0122</span>
+            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="4" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Berílio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>4</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Be</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>9,0122</li>
+              </ul>
             </td>
 
             <td class="hidden"></td>
@@ -85,62 +100,78 @@
             <td class="hidden"></td>
             <td class="hidden"></td>
 
-            <td class="elemento semimetal" tabindex="0" data-id="5">
-              <span class="elemento-nome"><em>Nome:</em>Boro</span>
-              <span class="elemento-numero"><em>Número atômico:</em>5</span>
-              <span class="elemento-sigla"><em>Sigla:</em>B</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>10,81</span>
+            <td class="elemento semimetal" tabindex="0" data-id="5" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Boro</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>5</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>B</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>10,81</li>
+              </ul>
             </td>
 
-            <td class="elemento nao-metal" tabindex="0" data-id="6">
-              <span class="elemento-nome"><em>Nome:</em>Carbono</span>
-              <span class="elemento-numero"><em>Número atômico:</em>6</span>
-              <span class="elemento-sigla"><em>Sigla:</em>C</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>12,011</span>
+            <td class="elemento nao-metal" tabindex="0" data-id="6" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Carbono</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>6</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>C</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>12,011</li>
+              </ul>
             </td>
 
-            <td class="elemento nao-metal" tabindex="0" data-id="7">
-              <span class="elemento-nome"><em>Nome:</em>Nitrogênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>7</span>
-              <span class="elemento-sigla"><em>Sigla:</em>N</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>14,007</span>
+            <td class="elemento nao-metal" tabindex="0" data-id="7" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Nitrogênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>7</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>N</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>14,007</li>
+              </ul>
             </td>
 
-            <td class="elemento nao-metal" tabindex="0" data-id="8">
-              <span class="elemento-nome"><em>Nome:</em>Oxigênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>8</span>
-              <span class="elemento-sigla"><em>Sigla:</em>O</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>15,999</span>
+            <td class="elemento nao-metal" tabindex="0" data-id="8" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Oxigênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>8</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>O</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>15,999</li>
+              </ul>
             </td>
 
-            <td class="elemento halogenio" tabindex="0" data-id="9">
-              <span class="elemento-nome"><em>Nome:</em>Flúor</span>
-              <span class="elemento-numero"><em>Número atômico:</em>9</span>
-              <span class="elemento-sigla"><em>Sigla:</em>F</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>18,998</span>
+            <td class="elemento halogenio" tabindex="0" data-id="9" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Flúor</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>9</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>F</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>18,998</li>
+              </ul>
             </td>
 
-            <td class="elemento gas-nobre" tabindex="0" data-id="10">
-              <span class="elemento-nome"><em>Nome:</em>Neônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>10</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ne</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>20,180</span>
+            <td class="elemento gas-nobre" tabindex="0" data-id="10" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Neônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>10</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ne</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>20,180</li>
+              </ul>
             </td>
           </tr>
 
           <tr>
-            <td class="elemento metal-alcalino" tabindex="0" data-id="11">
-              <span class="elemento-nome"><em>Nome:</em>Sódio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>11</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Na</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>22,990</span>
+            <td class="elemento metal-alcalino" tabindex="0" data-id="11" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Sódio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>11</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Na</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>22,990</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="12">
-              <span class="elemento-nome"><em>Nome:</em>Magnésio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>12</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Mg</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>24,305</span>
+            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="12" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Magnésio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>12</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Mg</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>24,305</li>
+              </ul>
             </td>
 
             <td class="hidden"></td>
@@ -154,665 +185,710 @@
             <td class="hidden"></td>
             <td class="hidden"></td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="13">
-              <span class="elemento-nome"><em>Nome:</em>Alumínio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>13</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Al</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>26,982</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="13" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Alumínio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>13</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Al</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>26,982</li>
+              </ul>
             </td>
 
-            <td class="elemento semimetal" tabindex="0" data-id="14">
-              <span class="elemento-nome"><em>Nome:</em>Silício</span>
-              <span class="elemento-numero"><em>Número atômico:</em>14</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Si</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>28,085</span>
+            <td class="elemento semimetal" tabindex="0" data-id="14" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Silício</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>14</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Si</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>28,085</li>
+              </ul>
             </td>
 
-            <td class="elemento nao-metal" tabindex="0" data-id="15">
-              <span class="elemento-nome"><em>Nome:</em>Fósforo</span>
-              <span class="elemento-numero"><em>Número atômico:</em>15</span>
-              <span class="elemento-sigla"><em>Sigla:</em>P</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>30,974</span>
+            <td class="elemento nao-metal" tabindex="0" data-id="15" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Fósforo</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>15</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>P</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>30,974</li>
+              </ul>
             </td>
 
-            <td class="elemento nao-metal" tabindex="0" data-id="16">
-              <span class="elemento-nome"><em>Nome:</em>Enxofre</span>
-              <span class="elemento-numero"><em>Número atômico:</em>16</span>
-              <span class="elemento-sigla"><em>Sigla:</em>S</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>32,06</span>
+            <td class="elemento nao-metal" tabindex="0" data-id="16" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Enxofre</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>16</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>S</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>32,06</li>
+              </ul>
             </td>
 
-            <td class="elemento halogenio" tabindex="0" data-id="17">
-              <span class="elemento-nome"><em>Nome:</em>Cloro</span>
-              <span class="elemento-numero"><em>Número atômico:</em>17</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cl</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>35,45</span>
+            <td class="elemento halogenio" tabindex="0" data-id="17" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Cloro</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>17</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cl</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>35,45</li>
+              </ul>
             </td>
 
-            <td class="elemento gas-nobre" tabindex="0" data-id="18">
-              <span class="elemento-nome"><em>Nome:</em>Argônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>18</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ar</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>39,948</span>
+            <td class="elemento gas-nobre" tabindex="0" data-id="18" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Argônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>18</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ar</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>39,948</li>
+              </ul>
             </td>
           </tr>
 
           <tr>
-            <td class="elemento metal-alcalino" tabindex="0" data-id="19">
-              <span class="elemento-nome"><em>Nome:</em>Potássio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>19</span>
-              <span class="elemento-sigla"><em>Sigla:</em>K</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>39,098</span>
+            <td class="elemento metal-alcalino" tabindex="0" data-id="19" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Potássio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>19</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>K</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>39,098</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="20">
-              <span class="elemento-nome"><em>Nome:</em>Cálcio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>20</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ca</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>40,078(4)</span>
+            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="20" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Cálcio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>20</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ca</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>40,078(4)</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="21">
-              <span class="elemento-nome"><em>Nome:</em>Escândio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>21</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Sc</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>44,956</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="21" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Escândio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>21</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Sc</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>44,956</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="22">
-              <span class="elemento-nome"><em>Nome:</em>Titânio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>22</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ti</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>47,867</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="22" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Titânio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>22</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ti</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>47,867</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="23">
-              <span class="elemento-nome"><em>Nome:</em>Vanádio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>23</span>
-              <span class="elemento-sigla"><em>Sigla:</em>V</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>50,942</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="23" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Vanádio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>23</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>V</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>50,942</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="24">
-              <span class="elemento-nome"><em>Nome:</em>Crômio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>24</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cr</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>51,996</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="24" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Crômio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>24</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cr</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>51,996</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="25">
-              <span class="elemento-nome"><em>Nome:</em>Manganês</span>
-              <span class="elemento-numero"><em>Número atômico:</em>25</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Mn</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>54,938</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="25" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Manganês</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>25</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Mn</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>54,938</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="26">
-              <span class="elemento-nome"><em>Nome:</em>Ferro</span>
-              <span class="elemento-numero"><em>Número atômico:</em>26</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Fe</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>55,845(2)</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="26" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Ferro</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>26</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Fe</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>55,845(2)</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="27">
-              <span class="elemento-nome"><em>Nome:</em>Cobalto</span>
-              <span class="elemento-numero"><em>Número atômico:</em>27</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Co</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>58,933</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="27" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Cobalto</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>27</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Co</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>58,933</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="28">
-              <span class="elemento-nome"><em>Nome:</em>Níquel</span>
-              <span class="elemento-numero"><em>Número atômico:</em>28</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ni</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>58,693</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="28" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Níquel</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>28</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ni</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>58,693</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="29">
-              <span class="elemento-nome"><em>Nome:</em>Cobre</span>
-              <span class="elemento-numero"><em>Número atômico:</em>29</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cu</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>63,546(3)</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="29" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Cobre</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>29</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cu</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>63,546(3)</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="30">
-              <span class="elemento-nome"><em>Nome:</em>Zinco</span>
-              <span class="elemento-numero"><em>Número atômico:</em>30</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Zn</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>65,38(2)</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="30" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Zinco</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>30</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Zn</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>65,38(2)</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="31">
-              <span class="elemento-nome"><em>Nome:</em>Gálio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>31</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ga</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>69,723</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="31" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Gálio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>31</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ga</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>69,723</li>
+              </ul>
             </td>
 
-            <td class="elemento semimetal" tabindex="0" data-id="32">
-              <span class="elemento-nome"><em>Nome:</em>Germânio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>32</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ge</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>72,630(8)</span>
+            <td class="elemento semimetal" tabindex="0" data-id="32" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Germânio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>32</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ge</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>72,630(8)</li>
+              </ul>
             </td>
 
-            <td class="elemento semimetal" tabindex="0" data-id="33">
-              <span class="elemento-nome"><em>Nome:</em>Arsênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>33</span>
-              <span class="elemento-sigla"><em>Sigla:</em>As</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>74,922</span>
+            <td class="elemento semimetal" tabindex="0" data-id="33" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Arsênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>33</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>As</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>74,922</li>
+              </ul>
             </td>
 
-            <td class="elemento nao-metal" tabindex="0" data-id="34">
-              <span class="elemento-nome"><em>Nome:</em>Selênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>34</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Se</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>78,971(8)</span>
+            <td class="elemento nao-metal" tabindex="0" data-id="34" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Selênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>34</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Se</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>78,971(8)</li>
+              </ul>
             </td>
 
-            <td class="elemento halogenio" tabindex="0" data-id="35">
-              <span class="elemento-nome"><em>Nome:</em>Bromo</span>
-              <span class="elemento-numero"><em>Número atômico:</em>35</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Br</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>79,904</span>
+            <td class="elemento halogenio" tabindex="0" data-id="35" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Bromo</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>35</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Br</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>79,904</li>
+              </ul>
             </td>
 
-            <td class="elemento gas-nobre" tabindex="0" data-id="36">
-              <span class="elemento-nome"><em>Nome:</em>Criptônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>36</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Kr</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>83,798(2)</span>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="elemento metal-alcalino" tabindex="0" data-id="37">
-              <span class="elemento-nome"><em>Nome:</em>Rubídio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>37</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Rb</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>85,468</span>
-            </td>
-
-            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="38">
-              <span class="elemento-nome"><em>Nome:</em>Estrôncio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>38</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Sr</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>87,62</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="39">
-              <span class="elemento-nome"><em>Nome:</em>Ítrio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>39</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Y</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>88,906</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="40">
-              <span class="elemento-nome"><em>Nome:</em>Zircônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>40</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Zr</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>91,224(2)</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="41">
-              <span class="elemento-nome"><em>Nome:</em>Nióbio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>41</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Nb</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>92,906</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="42">
-              <span class="elemento-nome"><em>Nome:</em>Molibdênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>42</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Mo</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>95,95</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="43">
-              <span class="elemento-nome"><em>Nome:</em>Tecnécio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>43</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Tc</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[98]</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="44">
-              <span class="elemento-nome"><em>Nome:</em>Rutênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>44</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ru</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>101,07(2)</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="45">
-              <span class="elemento-nome"><em>Nome:</em>Ródio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>45</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Rh</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>102,91</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="46">
-              <span class="elemento-nome"><em>Nome:</em>Paládio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>46</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Pd</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>106,42</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="47">
-              <span class="elemento-nome"><em>Nome:</em>Prata</span>
-              <span class="elemento-numero"><em>Número atômico:</em>47</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ag</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>107,87</span>
-            </td>
-
-            <td class="elemento metal-transicao" tabindex="0" data-id="48">
-              <span class="elemento-nome"><em>Nome:</em>Cádmio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>48</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cd</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>112,41</span>
-            </td>
-
-            <td class="elemento outros-metais" tabindex="0" data-id="49">
-              <span class="elemento-nome"><em>Nome:</em>Índio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>49</span>
-              <span class="elemento-sigla"><em>Sigla:</em>In</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>114,82</span>
-            </td>
-
-            <td class="elemento outros-metais" tabindex="0" data-id="50">
-              <span class="elemento-nome"><em>Nome:</em>Estanho</span>
-              <span class="elemento-numero"><em>Número atômico:</em>50</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Sn</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>118,71</span>
-            </td>
-
-            <td class="elemento semimetal" tabindex="0" data-id="51">
-              <span class="elemento-nome"><em>Nome:</em>Antimônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>51</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Sb</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>121,76</span>
-            </td>
-
-            <td class="elemento semimetal" tabindex="0" data-id="52">
-              <span class="elemento-nome"><em>Nome:</em>Telúrio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>52</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Te</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>127,60(3)</span>
-            </td>
-
-            <td class="elemento halogenio" tabindex="0" data-id="53">
-              <span class="elemento-nome"><em>Nome:</em>Iodo</span>
-              <span class="elemento-numero"><em>Número atômico:</em>53</span>
-              <span class="elemento-sigla"><em>Sigla:</em>I</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>126,90</span>
-            </td>
-
-            <td class="elemento gas-nobre" tabindex="0" data-id="54">
-              <span class="elemento-nome"><em>Nome:</em>Xenônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>54</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Xe</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>131,29</span>
+            <td class="elemento gas-nobre" tabindex="0" data-id="36" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Criptônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>36</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Kr</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>83,798(2)</li>
+              </ul>
             </td>
           </tr>
 
           <tr>
-            <td class="elemento metal-alcalino" tabindex="0" data-id="55">
-              <span class="elemento-nome"><em>Nome:</em>Césio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>55</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cs</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>132,91</span>
+            <td class="elemento metal-alcalino" tabindex="0" data-id="37" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Rubídio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>37</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Rb</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>85,468</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="56">
-              <span class="elemento-nome"><em>Nome:</em>Bário</span>
-              <span class="elemento-numero"><em>Número atômico:</em>56</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ba</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>137,33</span>
+            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="38" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Estrôncio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>38</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Sr</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>87,62</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="39" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Ítrio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>39</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Y</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>88,906</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="40" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Zircônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>40</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Zr</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>91,224(2)</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="41" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Nióbio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>41</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Nb</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>92,906</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="42" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Molibdênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>42</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Mo</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>95,95</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="43" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Tecnécio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>43</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Tc</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[98]</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="44" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Rutênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>44</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ru</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>101,07(2)</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="45" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Ródio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>45</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Rh</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>102,91</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="46" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Paládio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>46</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Pd</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>106,42</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="47" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Prata</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>47</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ag</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>107,87</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-transicao" tabindex="0" data-id="48" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Cádmio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>48</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cd</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>112,41</li>
+              </ul>
+            </td>
+
+            <td class="elemento outros-metais" tabindex="0" data-id="49" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Índio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>49</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>In</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>114,82</li>
+              </ul>
+            </td>
+
+            <td class="elemento outros-metais" tabindex="0" data-id="50" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Estanho</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>50</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Sn</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>118,71</li>
+              </ul>
+            </td>
+
+            <td class="elemento semimetal" tabindex="0" data-id="51" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Antimônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>51</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Sb</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>121,76</li>
+              </ul>
+            </td>
+
+            <td class="elemento semimetal" tabindex="0" data-id="52" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Telúrio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>52</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Te</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>127,60(3)</li>
+              </ul>
+            </td>
+
+            <td class="elemento halogenio" tabindex="0" data-id="53" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Iodo</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>53</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>I</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>126,90</li>
+              </ul>
+            </td>
+
+            <td class="elemento gas-nobre" tabindex="0" data-id="54" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Xenônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>54</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Xe</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>131,29</li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="elemento metal-alcalino" tabindex="0" data-id="55" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Césio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>55</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cs</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>132,91</li>
+              </ul>
+            </td>
+
+            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="56" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Bário</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>56</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ba</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>137,33</li>
+              </ul>
             </td>
 
             <td class="elemento lantanideo atalho" tabindex="0">
-              <span class="elemento-numero"><em>Número atômico:</em>57 - 71</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>Lantanídeos</span>
+              <ul>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>57 - 71</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>Lantanídeos</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="72">
-              <span class="elemento-nome"><em>Nome:</em>Háfnio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>72</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Hf</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>178,49(2)</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="72" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Háfnio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>72</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Hf</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>178,49(2)</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="73">
-              <span class="elemento-nome"><em>Nome:</em>Tântalo</span>
-              <span class="elemento-numero"><em>Número atômico:</em>73</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ta</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>180,95</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="73" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Tântalo</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>73</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ta</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>180,95</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="74">
-              <span class="elemento-nome"><em>Nome:</em>Tungstênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>74</span>
-              <span class="elemento-sigla"><em>Sigla:</em>W</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>183,84</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="74" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Tungstênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>74</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>W</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>183,84</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="75">
-              <span class="elemento-nome"><em>Nome:</em>Rênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>75</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Re</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>186,21</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="75" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Rênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>75</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Re</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>186,21</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="76">
-              <span class="elemento-nome"><em>Nome:</em>Ósmio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>76</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Os</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>190,23(3)</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="76" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Ósmio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>76</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Os</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>190,23(3)</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="77">
-              <span class="elemento-nome"><em>Nome:</em>Irídio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>77</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ir</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>192,22</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="77" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Irídio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>77</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ir</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>192,22</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="78">
-              <span class="elemento-nome"><em>Nome:</em>Platina</span>
-              <span class="elemento-numero"><em>Número atômico:</em>78</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Pt</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>195,08</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="78" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Platina</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>78</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Pt</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>195,08</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="79">
-              <span class="elemento-nome"><em>Nome:</em>Ouro</span>
-              <span class="elemento-numero"><em>Número atômico:</em>79</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Au</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>196,97</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="79" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Ouro</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>79</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Au</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>196,97</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="80">
-              <span class="elemento-nome"><em>Nome:</em>Mercúrio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>80</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Hg</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>200,59</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="80" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Mercúrio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>80</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Hg</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>200,59</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="81">
-              <span class="elemento-nome"><em>Nome:</em>Tálio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>81</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Tl</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>204,38</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="81" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Tálio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>81</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Tl</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>204,38</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="82">
-              <span class="elemento-nome"><em>Nome:</em>Chumbo</span>
-              <span class="elemento-numero"><em>Número atômico:</em>82</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Pb</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>207,2</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="82" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Chumbo</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>82</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Pb</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>207,2</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="83">
-              <span class="elemento-nome"><em>Nome:</em>Bismuto</span>
-              <span class="elemento-numero"><em>Número atômico:</em>83</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Bi</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>208,98</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="83" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Bismuto</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>83</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Bi</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>208,98</li>
+              </ul>
             </td>
 
-            <td class="elemento semimetal" tabindex="0" data-id="84">
-              <span class="elemento-nome"><em>Nome:</em>Polônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>84</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Po</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[209]</span>
+            <td class="elemento semimetal" tabindex="0" data-id="84" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Polônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>84</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Po</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[209]</li>
+              </ul>
             </td>
 
-            <td class="elemento halogenio" tabindex="0" data-id="85">
-              <span class="elemento-nome"><em>Nome:</em>Aslato</span>
-              <span class="elemento-numero"><em>Número atômico:</em>85</span>
-              <span class="elemento-sigla"><em>Sigla:</em>At</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[210]</span>
+            <td class="elemento halogenio" tabindex="0" data-id="85" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Aslato</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>85</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>At</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[210]</li>
+              </ul>
             </td>
 
-            <td class="elemento gas-nobre" tabindex="0" data-id="86">
-              <span class="elemento-nome"><em>Nome:</em>Randônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>86</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Rn</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[222]</span>
+            <td class="elemento gas-nobre" tabindex="0" data-id="86" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Randônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>86</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Rn</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[222]</li>
+              </ul>
             </td>
           </tr>
 
           <tr>
-            <td class="elemento metal-alcalino" tabindex="0" data-id="87">
-              <span class="elemento-nome"><em>Nome:</em>Frâncio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>87</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Fr</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[223]</span>
+            <td class="elemento metal-alcalino" tabindex="0" data-id="87" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Frâncio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>87</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Fr</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[223]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="88">
-              <span class="elemento-nome"><em>Nome:</em>Rádio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>88</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ra</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[226]</span>
+            <td class="elemento metal-alcalino-terroso" tabindex="0" data-id="88" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Rádio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>88</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ra</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[226]</li>
+              </ul>
             </td>
 
             <td class="elemento actinidio atalho" tabindex="0">
-              <span class="elemento-numero"><em>Número atômico:</em>89 - 103</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>Actinídios</span>
+              <ul>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>89 - 103</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>Actinídios</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="104">
-              <span class="elemento-nome"><em>Nome:</em>Rutherfórdio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>104</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Rf</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[267]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="104" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Rutherfórdio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>104</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Rf</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[267]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="105">
-              <span class="elemento-nome"><em>Nome:</em>Dúbnio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>105</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Db</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[268]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="105" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Dúbnio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>105</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Db</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[268]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="106">
-              <span class="elemento-nome"><em>Nome:</em>Seabórgio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>106</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Sg</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[269]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="106" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Seabórgio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>106</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Sg</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[269]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="107">
-              <span class="elemento-nome"><em>Nome:</em>Bóhrio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>107</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Bh</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[270]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="107" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Bóhrio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>107</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Bh</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[270]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="108">
-              <span class="elemento-nome"><em>Nome:</em>Hássio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>108</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Hs</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[269]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="108" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Hássio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>108</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Hs</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[269]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="109">
-              <span class="elemento-nome"><em>Nome:</em>Meitnério</span>
-              <span class="elemento-numero"><em>Número atômico:</em>109</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Mt</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[268]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="109" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Meitnério</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>109</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Mt</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[268]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="110">
-              <span class="elemento-nome"><em>Nome:</em>Darmstádtio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>110</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ds</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[281]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="110" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Darmstádtio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>110</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ds</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[281]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="111">
-              <span class="elemento-nome"><em>Nome:</em>Roentgênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>111</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Rg</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[281]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="111" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Roentgênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>111</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Rg</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[281]</li>
+              </ul>
             </td>
 
-            <td class="elemento metal-transicao" tabindex="0" data-id="112">
-              <span class="elemento-nome"><em>Nome:</em>Copernício</span>
-              <span class="elemento-numero"><em>Número atômico:</em>112</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cn</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[285]</span>
+            <td class="elemento metal-transicao" tabindex="0" data-id="112" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Copernício</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>112</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cn</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[285]</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="113">
-              <span class="elemento-nome"><em>Nome:</em>Nihônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>113</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Nh</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[286]</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="113" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Nihônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>113</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Nh</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[286]</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="114">
-              <span class="elemento-nome"><em>Nome:</em>Felóvio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>114</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Fl</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[289]</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="114" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Felóvio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>114</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Fl</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[289]</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="115">
-              <span class="elemento-nome"><em>Nome:</em>Moscóvio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>115</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Mc</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[288]</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="115" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Moscóvio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>115</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Mc</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[288]</li>
+              </ul>
             </td>
 
-            <td class="elemento outros-metais" tabindex="0" data-id="116">
-              <span class="elemento-nome"><em>Nome:</em>Livermório</span>
-              <span class="elemento-numero"><em>Número atômico:</em>116</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Lv</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[293]</span>
+            <td class="elemento outros-metais" tabindex="0" data-id="116" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Livermório</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>116</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Lv</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[293]</li>
+              </ul>
             </td>
 
-            <td class="elemento halogenio" tabindex="0" data-id="117">
-              <span class="elemento-nome"><em>Nome:</em>Tenessino</span>
-              <span class="elemento-numero"><em>Número atômico:</em>117</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ts</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[294]</span>
+            <td class="elemento halogenio" tabindex="0" data-id="117" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Tenessino</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>117</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ts</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[294]</li>
+              </ul>
             </td>
 
-            <td class="elemento gas-nobre" tabindex="0" data-id="118">
-              <span class="elemento-nome"><em>Nome:</em>Oganessônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>118</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Og</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[294]</span>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="hidden"></td>
-            <td class="hidden"></td>
-            <td class="hidden"></td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="57">
-              <span class="elemento-nome"><em>Nome:</em>Lantânio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>57</span>
-              <span class="elemento-sigla"><em>Sigla:</em>La</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>138,91</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="58">
-              <span class="elemento-nome"><em>Nome:</em>Cério</span>
-              <span class="elemento-numero"><em>Número atômico:</em>58</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ce</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>140,12</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="59">
-              <span class="elemento-nome"><em>Nome:</em>Praseodímio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>59</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Pr</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>140,91</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="60">
-              <span class="elemento-nome"><em>Nome:</em>Neodímio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>60</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Nd</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>144,24</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="61">
-              <span class="elemento-nome"><em>Nome:</em>Promécio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>61</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Pm</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[145]</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="62">
-              <span class="elemento-nome"><em>Nome:</em>Samário</span>
-              <span class="elemento-numero"><em>Número atômico:</em>62</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Sm</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>150,36(2)</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="63">
-              <span class="elemento-nome"><em>Nome:</em>Európio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>63</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Eu</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>151,96</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="64">
-              <span class="elemento-nome"><em>Nome:</em>Gadolínio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>64</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Gd</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>157,25(3)</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="65">
-              <span class="elemento-nome"><em>Nome:</em>Térbio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>65</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Tb</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>158,93</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="66">
-              <span class="elemento-nome"><em>Nome:</em>Disprósio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>66</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Dy</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>162,50</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="67">
-              <span class="elemento-nome"><em>Nome:</em>Hólmio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>67</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Ho</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>164,93</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="68">
-              <span class="elemento-nome"><em>Nome:</em>Érbio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>68</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Er</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>167,26</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="69">
-              <span class="elemento-nome"><em>Nome:</em>Túlio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>69</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Tm</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>168,93</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="70">
-              <span class="elemento-nome"><em>Nome:</em>Itérbio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>70</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Yb</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>173,05</span>
-            </td>
-
-            <td class="elemento lantanideo" tabindex="0" data-id="71">
-              <span class="elemento-nome"><em>Nome:</em>Lutécio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>71</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Lu</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>174,97</span>
+            <td class="elemento gas-nobre" tabindex="0" data-id="118" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Oganessônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>118</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Og</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[294]</li>
+              </ul>
             </td>
           </tr>
 
@@ -821,124 +897,305 @@
             <td class="hidden"></td>
             <td class="hidden"></td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="89">
-              <span class="elemento-nome"><em>Nome:</em>Actínio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>89</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Acs</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[227]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="57" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Lantânio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>57</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>La</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>138,91</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="90">
-              <span class="elemento-nome"><em>Nome:</em>Thório</span>
-              <span class="elemento-numero"><em>Número atômico:</em>90</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Th</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>232,04</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="58" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Cério</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>58</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ce</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>140,12</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="91">
-              <span class="elemento-nome"><em>Nome:</em>Protactínio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>91</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Pa</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>231,04</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="59" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Praseodímio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>59</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Pr</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>140,91</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="92">
-              <span class="elemento-nome"><em>Nome:</em>Urânio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>92</span>
-              <span class="elemento-sigla"><em>Sigla:</em>U</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>238,03</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="60" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Neodímio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>60</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Nd</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>144,24</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="93">
-              <span class="elemento-nome"><em>Nome:</em>Netúnio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>93</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Np</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[237]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="61" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Promécio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>61</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Pm</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[145]</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="94">
-              <span class="elemento-nome"><em>Nome:</em>Plutônio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>94</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Pu</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[244]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="62" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Samário</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>62</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Sm</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>150,36(2)</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="95">
-              <span class="elemento-nome"><em>Nome:</em>Amerício</span>
-              <span class="elemento-numero"><em>Número atômico:</em>95</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Am</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[243]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="63" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Európio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>63</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Eu</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>151,96</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="96">
-              <span class="elemento-nome"><em>Nome:</em>Cúrio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>96</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cm</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[247]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="64" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Gadolínio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>64</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Gd</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>157,25(3)</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="97">
-              <span class="elemento-nome"><em>Nome:</em>Berquélio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>97</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Bk</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[247]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="65" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Térbio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>65</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Tb</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>158,93</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="98">
-              <span class="elemento-nome"><em>Nome:</em>Califórnio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>98</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Cf</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[251]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="66" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Disprósio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>66</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Dy</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>162,50</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="99">
-              <span class="elemento-nome"><em>Nome:</em>Einstênio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>99</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Es</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[252]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="67" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Hólmio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>67</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Ho</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>164,93</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="100">
-              <span class="elemento-nome"><em>Nome:</em>Férmio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>100</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Fm</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[257]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="68" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Érbio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>68</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Er</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>167,26</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="101">
-              <span class="elemento-nome"><em>Nome:</em>Mendelévio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>101</span>
-              <span class="elemento-sigla"><em>Sigla:</em>MD</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[258]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="69" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Túlio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>69</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Tm</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>168,93</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="102">
-              <span class="elemento-nome"><em>Nome:</em>Nobélio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>102</span>
-              <span class="elemento-sigla"><em>Sigla:</em>No</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[259]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="70" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Itérbio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>70</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Yb</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>173,05</li>
+              </ul>
             </td>
 
-            <td class="elemento actinidio" tabindex="0" data-id="103">
-              <span class="elemento-nome"><em>Nome:</em>Laurêncio</span>
-              <span class="elemento-numero"><em>Número atômico:</em>103</span>
-              <span class="elemento-sigla"><em>Sigla:</em>Lr</span>
-              <span class="elemento-massa"><em>Massa atômica:</em>[262]</span>
+            <td class="elemento lantanideo" tabindex="0" data-id="71" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Lutécio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>71</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Lu</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>174,97</li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="hidden"></td>
+            <td class="hidden"></td>
+            <td class="hidden"></td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="89" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Actínio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>89</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Acs</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[227]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="90" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Thório</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>90</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Th</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>232,04</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="91" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Protactínio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>91</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Pa</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>231,04</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="92" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Urânio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>92</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>U</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>238,03</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="93" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Netúnio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>93</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Np</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[237]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="94" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Plutônio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>94</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Pu</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[244]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="95" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Amerício</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>95</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Am</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[243]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="96" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Cúrio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>96</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cm</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[247]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="97" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Berquélio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>97</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Bk</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[247]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="98" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Califórnio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>98</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Cf</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[251]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="99" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Einstênio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>99</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Es</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[252]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="100" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Férmio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>100</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Fm</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[257]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="101" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Mendelévio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>101</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>MD</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[258]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="102" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Nobélio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>102</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>No</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[259]</li>
+              </ul>
+            </td>
+
+            <td class="elemento actinidio" tabindex="0" data-id="103" data-toggle="modal" data-target="#modalElemento">
+              <ul>
+                <li class="elemento-nome"><span class="sr-only">Nome:</span>Laurêncio</li>
+                <li class="elemento-numero"><span class="sr-only">Número atômico:</span>103</li>
+                <li class="elemento-sigla"><span class="sr-only">Sigla:</span>Lr</li>
+                <li class="elemento-massa"><span class="sr-only">Massa atômica:</span>[262]</li>
+              </ul>
             </td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </main>
 
-    <div class="wall">
-      <div class="pop-up">
-        <table class="display">
-          <tr>
-            <td></td>
-          </tr>
-        </table>
-        <div class="content" autofocus></div>
-        <button class="fechar">Fechar</button>
+    <div class="modal" id="modalElemento" tabindex="-1" role="dialog" aria-labelledby="modalElementoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h5 class="modal-title" id="modalElementoLabel" tabindex="0">Ajuda</h5>
+          </div>
+          <div class="modal-body">
+            <ul tabindex="0">
+              <li>Use os atalhos Tab e Shift + Tab para navegação padrão.</li>
+              <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela.</li>
+              <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela.</li>
+              <li>Use a tecla Enter para detalhar os elementos e a tecla ESC para fechar a descrição.</li>
+              <li>Se precisar revisar esta informação, aperte Alt + H.</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>

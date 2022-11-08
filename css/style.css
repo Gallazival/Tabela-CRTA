@@ -1,123 +1,46 @@
-body {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-}
-
-.header {
-  background: #41db335e;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 0.75rem;
-  padding-block: 0.5rem;
-}
-
-.header img {
-  height: 6rem;
-}
-
-.title {
-  background: #ffffffd7;
-  border: 1px solid #000;
-  border-radius: 5px;
-  padding: 0.5rem;
-  text-align: center;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-b {
-  all: revert;
-}
-
 .nao-metal {
   background: #caff3a;
 }
+
 .gas-nobre {
   background: #68bae9;
 }
+
 .metal-alcalino {
   background: #fab625;
 }
+
 .metal-alcalino-terroso {
   background: #fff12e;
 }
+
 .semimetal {
   background: #35e4d0;
 }
+
 .halogenio {
   background: #abc0cc;
 }
+
 .outros-metais {
   background: #9d30cf;
 }
+
 .metal-transicao {
   background: #f86060;
 }
+
 .lantanideo {
   background: #a073e9;
 }
+
 .actinidio {
   background: #ff4bd2;
-}
-
-.main {
-  display: grid;
-  place-items: center;
-  gap: 1rem;
 }
 
 table {
   border-collapse: separate;
   border-spacing: 3px;
-}
-
-td * {
-  display: block;
-}
-
-.elemento {
-  --tamanho: 4rem;
-  width: var(--tamanho);
-  height: var(--tamanho);
-  border: 1px solid #000;
-  border-radius: 5px;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-}
-
-.hidden {
-  visibility: hidden !important;
-}
-
-em {
-  font-size: 0 !important;
-}
-
-.elemento-numero {
-  font-size: 0.75rem;
-  position: absolute;
-  inset: 2px auto auto 2px;
-}
-
-.elemento-sigla {
-  font-weight: 700;
-  position: absolute;
-  inset: 0.75rem 0 0 0;
-}
-
-.elemento-nome {
-  font-size: 0.6rem;
-  position: absolute;
-  inset: 2rem 0 0 0;
-}
-.elemento-massa {
-  font-size: 0.6rem;
-  position: absolute;
-  inset: 2.75rem 0 0 0;
 }
 
 .tabela td:where(:hover, :focus) {
@@ -126,52 +49,49 @@ em {
   z-index: 1;
 }
 
-.wall {
-  position: fixed !important;
-  inset: 0 0 0 0 !important;
-  z-index: 999 !important;
-  background: #00000080;
-  display: grid;
-  place-items: center;
+.hidden {
+  visibility: hidden !important;
 }
 
-.pop-up {
-  max-width: 35rem;
-  background: #87d181;
+.elemento {
+  width: 4rem;
+  height: 4rem;
   border: 1px solid #000;
   border-radius: 5px;
-  padding: 2rem;
+  position: relative;
+  user-select: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.elemento ul {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.content {
-  align-self: stretch;
-  background-color: #eee9e9;
-  border: 1px solid #000;
-  border-radius: 5px;
-  padding: 1rem;
-  margin-block: 0.5rem;
-  line-height: 1.5rem;
+.elemento-numero {
+  order: 1;
+  font-size: 0.75rem;
+  position: absolute;
+  inset: 1px auto auto 1px;
 }
 
-.ajuda,
-.fechar {
-  border: 1px solid #000;
-  border-radius: 2.5px;
-  padding-inline: 0.5rem;
-  padding-block: 0.25rem;
-  background: #fff;
+.elemento-sigla {
+  order: 2;
+  font-weight: 700;
 }
 
-.ajuda:where(:hover, :focus),
-.fechar:where(:hover, :focus) {
-  cursor: pointer;
-  background-color: #c6b9b9;
+.elemento-nome {
+  order: 3;
+  font-size: 0.6rem;
 }
 
-:focus {
-  border-color: #f00 !important;
-  outline-color: #f00 !important;
+.elemento-massa {
+  order: 4;
+  font-size: 0.6rem;
 }
