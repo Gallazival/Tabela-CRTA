@@ -47,7 +47,7 @@ $(document).ready(function () {
   function ajuda() {
     $('.modal-title').text(`Ajuda`);
     $('.modal-body ul').replaceWith(`
-      <ul>
+      <ul tabindex="0">
         <li>Use os atalhos Tab e Shift + Tab para navegação padrão.</li>
         <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela.</li>
         <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela.</li>
