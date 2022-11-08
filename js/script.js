@@ -26,7 +26,7 @@ $(document).ready(function () {
     // $('.modal-title td').replaceWith($(this).clone().removeAttr('tabindex'));
     $('.modal-title').text(`Detalhes`);
     $('.modal-body ul').replaceWith(`
-      <ul class="p-0 m-0" style="list-style: none">
+      <ul>
         <li><b>Nome:</b> ${elementos[index].nome}</li>
         <li><b>Sigla:</b> ${elementos[index].sigla}</li>
         <li><b>Número atômico:</b> ${elementos[index].atomico}</li>
@@ -47,7 +47,7 @@ $(document).ready(function () {
   function ajuda() {
     $('.modal-title').text(`Ajuda`);
     $('.modal-body ul').replaceWith(`
-      <ul class="p-0 m-0" style="list-style: none" tabindex="0">
+      <ul>
         <li>Use os atalhos Tab e Shift + Tab para navegação padrão.</li>
         <li>Use o atalho Ctrl + Alt + T para pular ao começo da tabela.</li>
         <li>Use o atalho Ctrl + Alt + Setas do teclado para navegar entre os elementos da tabela.</li>
