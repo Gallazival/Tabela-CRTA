@@ -1,97 +1,67 @@
-.nao-metal {
-  background: #caff3a;
+[role='table'] {
+  display: grid;
+  grid-template-rows: repeat(9, minmax(4rem, 1fr));
+  gap: 0.25rem;
 }
 
-.gas-nobre {
-  background: #68bae9;
+[role='row'] {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(4rem, 1fr));
+  gap: 0.25rem;
 }
 
-.metal-alcalino {
-  background: #fab625;
+[role="cell"]:focus {
+  outline: 2px solid red;
 }
 
-.metal-alcalino-terroso {
-  background: #fff12e;
+[aria-colspan="16"] {
+  grid-column: span 16 / span 16;
 }
 
-.semimetal {
-  background: #35e4d0;
+[aria-colspan="10"] {
+  grid-column: span 10 / span 10;
 }
 
-.halogenio {
-  background: #abc0cc;
+[aria-colspan="2"] {
+  grid-column: span 2 / span 2;
 }
 
-.outros-metais {
-  background: #9d30cf;
+[data-classe='Metais-alcalinos'] {
+  background: #ff510b;
 }
 
-.metal-transicao {
-  background: #f86060;
+[data-classe='Metais-alcalino-terrosos'] {
+  background: #ffca09;
 }
 
-.lantanideo {
-  background: #a073e9;
+[data-classe='Metais-de-transição'] {
+  background: #ff0e41;
 }
 
-.actinidio {
-  background: #ff4bd2;
+[data-classe='Lantanídeos'] {
+  background: #ff0ebc;
 }
 
-table {
-  border-collapse: separate;
-  border-spacing: 3px;
+[data-classe='Actinídios'] {
+  background: #cb0eff;
 }
 
-.tabela td:where(:hover, :focus) {
-  cursor: pointer;
-  transform: scale(1.5);
-  z-index: 1;
+[data-classe='Gases-nobres'] {
+  background: #540fff;
 }
 
-.hidden {
-  visibility: hidden !important;
+[data-classe='Semimetais'] {
+  background: #0cbcff;
 }
 
-.elemento {
-  width: 4rem;
-  height: 4rem;
-  border: 1px solid #000;
-  border-radius: 5px;
-  position: relative;
-  user-select: none;
+[data-classe='Halogênios'] {
+  background: #12ffd1;
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+[data-classe='Outros-metais'] {
+  background: #00d37b;
 }
 
-.elemento ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.elemento-numero {
-  order: 1;
-  font-size: 0.75rem;
-  position: absolute;
-  inset: 1px auto auto 1px;
-}
-
-.elemento-sigla {
-  order: 2;
-  font-weight: 700;
-}
-
-.elemento-nome {
-  order: 3;
-  font-size: 0.6rem;
-}
-
-.elemento-massa {
-  order: 4;
-  font-size: 0.6rem;
+[data-classe='Não-metais'] {
+  background: #09f04a;
 }
