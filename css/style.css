@@ -6,6 +6,12 @@ td:not(:empty) {
   text-align: center;
 }
 
+td button {
+  all: unset;
+  position: absolute;
+  inset: 0 0 0 0;
+}
+
 .numero {
   position: absolute;
   inset: 0 auto auto 2px;

@@ -22,11 +22,13 @@ $(document).ready(function () {
         index = ++aux;
       }
       $('tr').last().append(`
-        <td role="cell" aria-colindex="${index}" data-classe="${classe}" data-bs-toggle="modal" data-bs-target="#detalharElemento">
-          <span class="visually-hidden">${elemento.nome}</span>
-          <span class="numero"><span class="visually-hidden">Número atômico: </span>${elemento.numero}</span>
-          <span class="simbolo"><span class="visually-hidden">Símbolo: </span>${elemento.simbolo}</span>
-          <span class="massa"><span class="visually-hidden">Massa: </span>${elemento.massa}</span>
+        <td role="cell" aria-colindex="${index}" data-classe="${classe}">
+          <button role="presentation" data-bs-toggle="modal" data-bs-target="#detalharElemento">
+            <span class="visually-hidden">${elemento.nome}</span>
+            <span class="numero"><span class="visually-hidden">Número atômico: </span>${elemento.numero}</span>
+            <span class="simbolo"><span class="visually-hidden">Símbolo: </span>${elemento.simbolo}</span>
+            <span class="massa"><span class="visually-hidden">Massa: </span>${elemento.massa}</span>
+          </button>
         </td>
       `.trim());
     }
