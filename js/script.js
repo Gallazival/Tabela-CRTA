@@ -39,7 +39,8 @@ $(document).ready(function () {
     .before('<td role="cell" colspan="10" aria-colspan="10"></td>');
 
   $('[aria-colindex="2"]').slice(-2)
-    .after('<td role="cell"></td>');
+    .add($('[aria-colindex="17"]').slice(-2))
+      .after('<td role="cell"></td>');
 
   $('[aria-colindex="3"]').slice(-2)
     .before('<td role="cell" colspan="2" aria-colspan="2"></td>');
