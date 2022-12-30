@@ -60,7 +60,7 @@ $(document).ready(function () {
         <li>Classificação: ${elemento.classe}.</li>
         <li>Período: ${elemento.periodo}&#186; período.</li>
         <li>Grupo: ${elemento.grupo[0]}&#186; grupo.</li>
-        <li>Família: ${elemento.grupo[1]}, família dos ${elemento.grupo[2]}.</li>
+        <li>Família: ${elemento.grupo[1]}, ${elemento.grupo[2]}.</li>
         <li>Configuração eletrônica: ${elemento.configuracao}.</li>
         <li>Curiosidade: ${elemento.curiosidade}.</li>
       </ul>
