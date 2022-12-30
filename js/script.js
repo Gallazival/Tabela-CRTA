@@ -23,7 +23,7 @@ $(document).ready(function () {
       }
       $('tr').last().append(`
         <td role="cell" aria-colindex="${index}" data-classe="${classe}">
-          <button role="presentation" data-bs-toggle="modal" data-bs-target="#detalharElemento">
+          <button role="presentation" data-bs-toggle="modal" data-bs-target="#detalharElemento" data-bs-elemento="${elemento.numero}">
             <span class="visually-hidden">${elemento.nome}</span>
             <span class="numero"><span class="visually-hidden">Número atômico: </span>${elemento.numero}</span>
             <span class="simbolo"><span class="visually-hidden">Símbolo: </span>${elemento.simbolo}</span>
@@ -46,4 +46,24 @@ $(document).ready(function () {
 
   $('[aria-colindex="3"]').slice(-2)
     .before('<td role="cell" colspan="2" aria-colspan="2"></td>');
+
+  const modal = document.querySelector('#detalharElemento');
+  modal.addEventListener('show.bs.modal', (e) => {
+    const numero = e.relatedTarget.getAttribute('data-bs-elemento');
+    const elemento = elementos[numero];
+    $('#detalharElemento .modal-body').html(`
+      <h2 class="fs-5">${elemento.nome}</h2>
+      <ul aria-label="Descrição">
+        <li>Número atômico: ${elemento.numero}.</li>
+        <li>Símbolo: ${elemento.simbolo}.</li>
+        <li>Massa atômica: ${elemento.massa}.</li>
+        <li>Classificação: ${elemento.classe}.</li>
+        <li>Período: ${elemento.periodo}&#186; período.</li>
+        <li>Grupo: ${elemento.grupo[0]}&#186; grupo.</li>
+        <li>Família: ${elemento.grupo[1]}, família dos ${elemento.grupo[2]}.</li>
+        <li>Configuração eletrônica: ${elemento.configuracao}.</li>
+        <li>Curiosidade: ${elemento.curiosidade}.</li>
+      </ul>
+    `);
+  });
 });
