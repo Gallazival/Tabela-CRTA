@@ -1,67 +1,64 @@
-[role='table'] {
-  display: grid;
-  grid-template-rows: repeat(9, minmax(4rem, 1fr));
-  gap: 0.25rem;
+td:not(:empty) {
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid black;
+  position: relative;
+  text-align: center;
 }
 
-[role='row'] {
-  display: grid;
-  grid-template-columns: repeat(18, minmax(4rem, 1fr));
-  gap: 0.25rem;
+.numero {
+  position: absolute;
+  inset: 0 auto auto 2px;
+  font-size: 0.75em;
 }
 
-[role="cell"]:focus {
-  outline: 2px solid red;
+.simbolo {
+  font-weight: 700;
+  font-size: 1.25em;
 }
 
-[aria-colspan="16"] {
-  grid-column: span 16 / span 16;
-}
-
-[aria-colspan="10"] {
-  grid-column: span 10 / span 10;
-}
-
-[aria-colspan="2"] {
-  grid-column: span 2 / span 2;
+.massa {
+  position: absolute;
+  inset: auto 2px 0 auto;
+  font-size: 0.75em;
 }
 
 [data-classe='Metais-alcalinos'] {
-  background: #ff510b;
+  background: #FF9F4F;
 }
 
 [data-classe='Metais-alcalino-terrosos'] {
-  background: #ffca09;
+  background: #FFD53F;
 }
 
 [data-classe='Metais-de-transição'] {
-  background: #ff0e41;
+  background: #F1909C;
 }
 
 [data-classe='Lantanídeos'] {
-  background: #ff0ebc;
+  background: #FF65D3;
 }
 
 [data-classe='Actinídios'] {
-  background: #cb0eff;
+  background: #E176FF;
 }
 
 [data-classe='Gases-nobres'] {
-  background: #540fff;
+  background: #ACACE6;
 }
 
 [data-classe='Semimetais'] {
-  background: #0cbcff;
+  background: #3FC9FF;
 }
 
 [data-classe='Halogênios'] {
-  background: #12ffd1;
+  background: #57FFDD;
 }
 
 [data-classe='Outros-metais'] {
-  background: #00d37b;
+  background: #7BC576;
 }
 
 [data-classe='Não-metais'] {
-  background: #09f04a;
+  background: #3AF870;
 }
