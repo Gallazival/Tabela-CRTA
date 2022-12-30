@@ -1,97 +1,80 @@
-.nao-metal {
-  background: #caff3a;
-}
-
-.gas-nobre {
-  background: #68bae9;
-}
-
-.metal-alcalino {
-  background: #fab625;
-}
-
-.metal-alcalino-terroso {
-  background: #fff12e;
-}
-
-.semimetal {
-  background: #35e4d0;
-}
-
-.halogenio {
-  background: #abc0cc;
-}
-
-.outros-metais {
-  background: #9d30cf;
-}
-
-.metal-transicao {
-  background: #f86060;
-}
-
-.lantanideo {
-  background: #a073e9;
-}
-
-.actinidio {
-  background: #ff4bd2;
-}
-
 table {
   border-collapse: separate;
-  border-spacing: 3px;
 }
 
-.tabela td:where(:hover, :focus) {
-  cursor: pointer;
-  transform: scale(1.5);
-  z-index: 1;
-}
-
-.hidden {
-  visibility: hidden !important;
-}
-
-.elemento {
-  width: 4rem;
+td:not(:empty) {
   height: 4rem;
-  border: 1px solid #000;
-  border-radius: 5px;
+  width: 4rem;
+  border: 1px solid black;
   position: relative;
-  user-select: none;
+  text-align: center;
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+td:not(:empty):has(button:focus) {
+  z-index: 999;
+  transform: scale(1.5);
+  border: 2px solid #f00;
 }
 
-.elemento ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.elemento-numero {
-  order: 1;
-  font-size: 0.75rem;
+td button {
+  all: unset;
   position: absolute;
-  inset: 1px auto auto 1px;
+  inset: 0 0 0 0;
 }
 
-.elemento-sigla {
-  order: 2;
+.numero {
+  position: absolute;
+  inset: 0 auto auto 2px;
+  font-size: 0.75em;
+}
+
+.simbolo {
   font-weight: 700;
+  font-size: 1.25em;
 }
 
-.elemento-nome {
-  order: 3;
-  font-size: 0.6rem;
+.massa {
+  position: absolute;
+  inset: auto 2px 0 auto;
+  font-size: 0.75em;
 }
 
-.elemento-massa {
-  order: 4;
-  font-size: 0.6rem;
+[data-classe='Metais-alcalinos'] {
+  background: #FF9F4F;
+}
+
+[data-classe='Metais-alcalino-terrosos'] {
+  background: #FFD53F;
+}
+
+[data-classe='Metais-de-transição'] {
+  background: #F1909C;
+}
+
+[data-classe='Lantanídeos'] {
+  background: #FF65D3;
+}
+
+[data-classe='Actinídios'] {
+  background: #E176FF;
+}
+
+[data-classe='Gases-nobres'] {
+  background: #ACACE6;
+}
+
+[data-classe='Semimetais'] {
+  background: #3FC9FF;
+}
+
+[data-classe='Halogênios'] {
+  background: #57FFDD;
+}
+
+[data-classe='Outros-metais'] {
+  background: #7BC576;
+}
+
+[data-classe='Não-metais'] {
+  background: #3AF870;
 }
