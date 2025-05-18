@@ -1,4 +1,4 @@
-import elementos from './json/elementos.json' assert { type: 'json' };
+import { elementos } from "./elementos.js";
 
 $(document).ready(function () {
   const tabela = [[], [], [], [], [], [], [], [], []];
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
   $('[aria-colindex="2"]').slice(-2)
     .add($('[aria-colindex="17"]').slice(-2))
-      .after('<td role="cell"></td>');
+    .after('<td role="cell"></td>');
 
   $('[aria-colindex="3"]').slice(-2)
     .before('<td role="cell" colspan="2" aria-colspan="2"></td>');
